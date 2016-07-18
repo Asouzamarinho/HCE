@@ -1,0 +1,78 @@
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\TagGen.exe.config
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\obj\Debug\TagGen.exe
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\obj\Debug\TagGen.pdb
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\IRI.Win32.CSharp.IRIWrapper.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\IRI_W32.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\TagGen_TemporaryKey.pfx
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\TagGen.exe.manifest
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\TagGen.application
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\TagGen.exe
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\TagGen.pdb
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\Cruzeiro.Core.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\Cruzeiro.WebService.Console.exe
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\Cruzeiro.WebService.Core.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\EntityFramework.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.Common.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.Interfaces.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.OrmLite.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.OrmLite.SqlServer.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.Redis.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.ServiceInterface.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.Text.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\TotalTag.Common.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\TotalTag.Monitor.Config.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\Impinj.OctaneSdk.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\LLRP.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\LLRP.Impinj.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\Cruzeiro.Core.pdb
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\Cruzeiro.WebService.Console.pdb
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\Cruzeiro.WebService.Core.pdb
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\EntityFramework.xml
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.xml
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.Common.xml
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.Interfaces.xml
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.Redis.xml
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\ServiceStack.Text.xml
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\bin\Debug\Impinj.OctaneSdk.xml
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\obj\Debug\TagGen.csprojResolveAssemblyReference.cache
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\obj\Debug\TagGen.Form1.resources
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\obj\Debug\TagGen.Properties.Resources.resources
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\obj\Debug\TagGen.csproj.GenerateResource.Cache
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\obj\Debug\TagGen.exe.manifest
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\TagGen\obj\Debug\TagGen.application
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\TagGen.exe.config
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\obj\Debug\TagGen.exe
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\obj\Debug\TagGen.pdb
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\IRI.Win32.CSharp.IRIWrapper.dll
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\IRI_W32.dll
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\TagGen_TemporaryKey.pfx
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\TagGen.exe.manifest
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\TagGen.application
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\TagGen.exe
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\TagGen.pdb
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\EntityFramework.dll
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.Common.dll
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.dll
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.Interfaces.dll
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.OrmLite.dll
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.OrmLite.SqlServer.dll
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.Redis.dll
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.ServiceInterface.dll
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.Text.dll
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\EntityFramework.xml
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.xml
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.Common.xml
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.Interfaces.xml
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.Redis.xml
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\bin\Debug\ServiceStack.Text.xml
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\obj\Debug\TagGen.csprojResolveAssemblyReference.cache
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\obj\Debug\TagGen.Form1.resources
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\obj\Debug\TagGen.Properties.Resources.resources
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\obj\Debug\TagGen.csproj.GenerateResource.Cache
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\obj\Debug\TagGen.exe.manifest
+C:\Users\mgrivet\Documents\Visual Studio 2012\Projects\Cruzeiro\TagGen\obj\Debug\TagGen.application

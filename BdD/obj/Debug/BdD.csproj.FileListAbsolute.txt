@@ -1,0 +1,6 @@
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\BdD\bin\Debug\BdD.exe.config
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\BdD\bin\Debug\BdD.exe
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\BdD\bin\Debug\BdD.pdb
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\BdD\obj\Debug\BdD.exe
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\BdD\obj\Debug\BdD.pdb
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\BdD\obj\Debug\BdD.csprojResolveAssemblyReference.cache

@@ -1,0 +1,12 @@
+C:\Users\mgrivet\Downloads\Identix.SerialSDK.Examples_0.30\Identix.SerialSDK_0.30\SolutionResources\bin\Debug\IRI_W32.dll
+C:\Users\mgrivet\Downloads\Identix.SerialSDK.Examples_0.30\Identix.SerialSDK_0.30\SolutionResources\bin\Debug\SolutionResources.dll
+C:\Users\mgrivet\Downloads\Identix.SerialSDK.Examples_0.30\Identix.SerialSDK_0.30\SolutionResources\bin\Debug\SolutionResources.pdb
+C:\Users\mgrivet\Downloads\Identix.SerialSDK.Examples_0.30\Identix.SerialSDK_0.30\SolutionResources\obj\Debug\SolutionResources.dll
+C:\Users\mgrivet\Downloads\Identix.SerialSDK.Examples_0.30\Identix.SerialSDK_0.30\SolutionResources\obj\Debug\SolutionResources.pdb
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\SolutionResources\bin\Debug\IRI_W32.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\SolutionResources\bin\Debug\SolutionResources.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\SolutionResources\bin\Debug\SolutionResources.pdb
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\SolutionResources\bin\Debug\IRI.Win32.CSharp.IRIWrapper.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\SolutionResources\obj\Debug\SolutionResources.dll
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\SolutionResources\obj\Debug\SolutionResources.pdb
+C:\Users\mgrivet\Documents\GitHub\Cruzeiro\SolutionResources\obj\Debug\SolutionResources.csprojResolveAssemblyReference.cache
