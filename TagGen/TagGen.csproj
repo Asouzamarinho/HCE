@@ -127,9 +127,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ObservableListSource.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Terceirizado.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,10 +144,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Cruzeiro.Core.Model.Beans.CursoBean.datasource" />
-    <None Include="Properties\DataSources\Cruzeiro.Core.Model.Beans.EstabelecimentoBean.datasource" />
-    <None Include="Properties\DataSources\Cruzeiro.Core.Model.Beans.PessoaBean.datasource" />
-    <None Include="Properties\DataSources\Cruzeiro.Core.Model.Beans.TurmaBean.datasource" />
+    <None Include="Properties\DataSources\Terceirizado.datasource" />
+    <None Include="Properties\DataSources\Veiculo.datasource" />
+    <None Include="Properties\DataSources\Visitante.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

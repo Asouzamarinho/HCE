@@ -35,42 +35,34 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.estabelecimentoBeanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cursoBeanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.turmaBeanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pessoaBeanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Funcionários = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstabelecimentoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.terDataGridView = new System.Windows.Forms.DataGridView();
+            this.terDataGridViewColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.terDataGridViewColumnEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.terDataGridViewColumnIdentificacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.terDataGridViewColumnEPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_apagar_funcionarios = new System.Windows.Forms.Button();
             this.btn_associar_funcionarios = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxPessoafunc = new System.Windows.Forms.TextBox();
             this.Visitantes = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visDataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxpessoavisit = new System.Windows.Forms.TextBox();
             this.btn_associar_visitantes = new System.Windows.Forms.Button();
             this.btn_excluir_visitantes = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.visNomeTextBox = new System.Windows.Forms.TextBox();
             this.btn_apagar_visitantes = new System.Windows.Forms.Button();
             this.btn_criar_visitantes = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.visIdentTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.veicDataGridView = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -92,20 +84,23 @@
             this.btn_apagar = new System.Windows.Forms.Button();
             this.btn_procurar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pingLed = new System.Windows.Forms.Panel();
-            this.pingTimer = new System.Windows.Forms.Timer(this.components);
-            this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.estabelecimentoBeanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBeanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turmaBeanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoaBeanBindingSource)).BeginInit();
+            this.visTipoTextBox = new System.Windows.Forms.TextBox();
+            this.visLeitoTextBox = new System.Windows.Forms.TextBox();
+            this.visDataGridViewColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visDataGridViewColumnLeito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visDataGridViewColumnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visDataGridViewColumnEPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.veicDataGridViewColumnModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.veicDataGridViewColumnMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.veicDataGridViewColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.veicDataGridViewColumnEPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.Funcionários.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.terDataGridView)).BeginInit();
             this.Visitantes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visDataGridView)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veicDataGridView)).BeginInit();
             this.Administrativo.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -127,7 +122,7 @@
             // 
             // Funcionários
             // 
-            this.Funcionários.Controls.Add(this.dataGridView1);
+            this.Funcionários.Controls.Add(this.terDataGridView);
             this.Funcionários.Controls.Add(this.btn_apagar_funcionarios);
             this.Funcionários.Controls.Add(this.btn_associar_funcionarios);
             this.Funcionários.Controls.Add(this.label8);
@@ -140,13 +135,12 @@
             this.Funcionários.Text = "Terceirizados";
             this.Funcionários.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // terDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.terDataGridView.AllowUserToAddRows = false;
+            this.terDataGridView.AllowUserToDeleteRows = false;
+            this.terDataGridView.AllowUserToResizeRows = false;
+            this.terDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,39 +148,53 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.EstabelecimentoId});
-            this.dataGridView1.DataSource = this.pessoaBeanBindingSource;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 18);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(727, 366);
-            this.dataGridView1.TabIndex = 107;
+            this.terDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.terDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.terDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.terDataGridViewColumnNome,
+            this.terDataGridViewColumnEmpresa,
+            this.terDataGridViewColumnIdentificacao,
+            this.terDataGridViewColumnEPC});
+            this.terDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.terDataGridView.Location = new System.Drawing.Point(9, 18);
+            this.terDataGridView.MultiSelect = false;
+            this.terDataGridView.Name = "terDataGridView";
+            this.terDataGridView.ReadOnly = true;
+            this.terDataGridView.RowHeadersVisible = false;
+            this.terDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.terDataGridView.Size = new System.Drawing.Size(727, 366);
+            this.terDataGridView.TabIndex = 107;
+            this.terDataGridView.SelectionChanged += new System.EventHandler(this.terDataGridView_SelectionChanged);
             // 
-            // dataGridViewTextBoxColumn2
+            // terDataGridViewColumnNome
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Documento";
+            this.terDataGridViewColumnNome.DataPropertyName = "Nome";
+            this.terDataGridViewColumnNome.HeaderText = "Nome";
+            this.terDataGridViewColumnNome.Name = "terDataGridViewColumnNome";
+            this.terDataGridViewColumnNome.ReadOnly = true;
+            // 
+            // terDataGridViewColumnEmpresa
+            // 
+            this.terDataGridViewColumnEmpresa.DataPropertyName = "Empresa";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Identificação";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.terDataGridViewColumnEmpresa.DefaultCellStyle = dataGridViewCellStyle2;
+            this.terDataGridViewColumnEmpresa.HeaderText = "Empresa";
+            this.terDataGridViewColumnEmpresa.Name = "terDataGridViewColumnEmpresa";
+            this.terDataGridViewColumnEmpresa.ReadOnly = true;
             // 
-            // EstabelecimentoId
+            // terDataGridViewColumnIdentificacao
             // 
-            this.EstabelecimentoId.DataPropertyName = "EstabelecimentoId";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.EstabelecimentoId.DefaultCellStyle = dataGridViewCellStyle3;
-            this.EstabelecimentoId.HeaderText = "Empresa";
-            this.EstabelecimentoId.Name = "EstabelecimentoId";
-            this.EstabelecimentoId.ReadOnly = true;
+            this.terDataGridViewColumnIdentificacao.DataPropertyName = "Identificacao";
+            this.terDataGridViewColumnIdentificacao.HeaderText = "Idenfificação";
+            this.terDataGridViewColumnIdentificacao.Name = "terDataGridViewColumnIdentificacao";
+            this.terDataGridViewColumnIdentificacao.ReadOnly = true;
+            // 
+            // terDataGridViewColumnEPC
+            // 
+            this.terDataGridViewColumnEPC.DataPropertyName = "EPC";
+            this.terDataGridViewColumnEPC.HeaderText = "EPC";
+            this.terDataGridViewColumnEPC.Name = "terDataGridViewColumnEPC";
+            this.terDataGridViewColumnEPC.ReadOnly = true;
             // 
             // btn_apagar_funcionarios
             // 
@@ -196,6 +204,7 @@
             this.btn_apagar_funcionarios.TabIndex = 4;
             this.btn_apagar_funcionarios.Text = "Apagar epc";
             this.btn_apagar_funcionarios.UseVisualStyleBackColor = true;
+            this.btn_apagar_funcionarios.Click += new System.EventHandler(this.btn_apagar_funcionarios_Click);
             // 
             // btn_associar_funcionarios
             // 
@@ -205,6 +214,7 @@
             this.btn_associar_funcionarios.TabIndex = 3;
             this.btn_associar_funcionarios.Text = "Associar epc";
             this.btn_associar_funcionarios.UseVisualStyleBackColor = true;
+            this.btn_associar_funcionarios.Click += new System.EventHandler(this.btn_associar_funcionarios_Click);
             // 
             // label8
             // 
@@ -225,19 +235,19 @@
             // 
             // Visitantes
             // 
-            this.Visitantes.Controls.Add(this.dataGridView2);
+            this.Visitantes.Controls.Add(this.visLeitoTextBox);
+            this.Visitantes.Controls.Add(this.visTipoTextBox);
+            this.Visitantes.Controls.Add(this.visDataGridView);
             this.Visitantes.Controls.Add(this.label2);
-            this.Visitantes.Controls.Add(this.comboBox2);
             this.Visitantes.Controls.Add(this.label1);
-            this.Visitantes.Controls.Add(this.comboBox1);
             this.Visitantes.Controls.Add(this.label4);
             this.Visitantes.Controls.Add(this.textBoxpessoavisit);
             this.Visitantes.Controls.Add(this.btn_associar_visitantes);
             this.Visitantes.Controls.Add(this.btn_excluir_visitantes);
-            this.Visitantes.Controls.Add(this.textBox2);
+            this.Visitantes.Controls.Add(this.visNomeTextBox);
             this.Visitantes.Controls.Add(this.btn_apagar_visitantes);
             this.Visitantes.Controls.Add(this.btn_criar_visitantes);
-            this.Visitantes.Controls.Add(this.textBox3);
+            this.Visitantes.Controls.Add(this.visIdentTextBox);
             this.Visitantes.Controls.Add(this.label10);
             this.Visitantes.Controls.Add(this.label14);
             this.Visitantes.Location = new System.Drawing.Point(4, 22);
@@ -247,41 +257,36 @@
             this.Visitantes.Text = "Visitantes/Acomp.";
             this.Visitantes.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // visDataGridView
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.dataGridView2.DataSource = this.pessoaBeanBindingSource;
-            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dataGridView2.Location = new System.Drawing.Point(10, 89);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(727, 292);
-            this.dataGridView2.TabIndex = 118;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "AnoEntrada";
-            this.Column1.HeaderText = "Leito";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.visDataGridView.AllowUserToAddRows = false;
+            this.visDataGridView.AllowUserToDeleteRows = false;
+            this.visDataGridView.AllowUserToResizeRows = false;
+            this.visDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.visDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.visDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.visDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.visDataGridViewColumnNome,
+            this.visDataGridViewColumnLeito,
+            this.visDataGridViewColumnTipo,
+            this.visDataGridViewColumnEPC});
+            this.visDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.visDataGridView.Location = new System.Drawing.Point(10, 89);
+            this.visDataGridView.MultiSelect = false;
+            this.visDataGridView.Name = "visDataGridView";
+            this.visDataGridView.ReadOnly = true;
+            this.visDataGridView.RowHeadersVisible = false;
+            this.visDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.visDataGridView.Size = new System.Drawing.Size(727, 292);
+            this.visDataGridView.TabIndex = 118;
+            this.visDataGridView.SelectionChanged += new System.EventHandler(this.visDataGridView_SelectionChanged);
             // 
             // label2
             // 
@@ -292,18 +297,6 @@
             this.label2.TabIndex = 116;
             this.label2.Text = "Tipo";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.DataSource = this.estabelecimentoBeanBindingSource;
-            this.comboBox2.DisplayMember = "Name";
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(553, 24);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(98, 21);
-            this.comboBox2.TabIndex = 115;
-            this.comboBox2.ValueMember = "Id";
-            this.comboBox2.Visible = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -312,18 +305,6 @@
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 114;
             this.label1.Text = "Leito do paciente";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.estabelecimentoBeanBindingSource;
-            this.comboBox1.DisplayMember = "Name";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(553, 63);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(42, 21);
-            this.comboBox1.TabIndex = 113;
-            this.comboBox1.ValueMember = "Id";
-            this.comboBox1.Visible = false;
             // 
             // label4
             // 
@@ -350,6 +331,7 @@
             this.btn_associar_visitantes.TabIndex = 7;
             this.btn_associar_visitantes.Text = "Associar epc";
             this.btn_associar_visitantes.UseVisualStyleBackColor = true;
+            this.btn_associar_visitantes.Click += new System.EventHandler(this.btn_associar_visitantes_Click);
             // 
             // btn_excluir_visitantes
             // 
@@ -360,13 +342,14 @@
             this.btn_excluir_visitantes.TabIndex = 5;
             this.btn_excluir_visitantes.Text = "Excluir Visitante";
             this.btn_excluir_visitantes.UseVisualStyleBackColor = true;
+            this.btn_excluir_visitantes.Click += new System.EventHandler(this.btn_excluir_visitantes_Click);
             // 
-            // textBox2
+            // visNomeTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(408, 20);
-            this.textBox2.TabIndex = 2;
+            this.visNomeTextBox.Location = new System.Drawing.Point(115, 24);
+            this.visNomeTextBox.Name = "visNomeTextBox";
+            this.visNomeTextBox.Size = new System.Drawing.Size(408, 20);
+            this.visNomeTextBox.TabIndex = 2;
             // 
             // btn_apagar_visitantes
             // 
@@ -376,24 +359,25 @@
             this.btn_apagar_visitantes.TabIndex = 8;
             this.btn_apagar_visitantes.Text = "Apagar epc";
             this.btn_apagar_visitantes.UseVisualStyleBackColor = true;
+            this.btn_apagar_visitantes.Click += new System.EventHandler(this.btn_apagar_visitantes_Click);
             // 
             // btn_criar_visitantes
             // 
             this.btn_criar_visitantes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_criar_visitantes.Enabled = false;
             this.btn_criar_visitantes.Location = new System.Drawing.Point(9, 21);
             this.btn_criar_visitantes.Name = "btn_criar_visitantes";
             this.btn_criar_visitantes.Size = new System.Drawing.Size(91, 23);
             this.btn_criar_visitantes.TabIndex = 4;
             this.btn_criar_visitantes.Text = "Criar Visitante";
             this.btn_criar_visitantes.UseVisualStyleBackColor = true;
+            this.btn_criar_visitantes.Click += new System.EventHandler(this.btn_criar_visitantes_Click);
             // 
-            // textBox3
+            // visIdentTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(115, 63);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(323, 20);
-            this.textBox3.TabIndex = 3;
+            this.visIdentTextBox.Location = new System.Drawing.Point(115, 63);
+            this.visIdentTextBox.Name = "visIdentTextBox";
+            this.visIdentTextBox.Size = new System.Drawing.Size(323, 20);
+            this.visIdentTextBox.TabIndex = 3;
             // 
             // label10
             // 
@@ -415,7 +399,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView4);
+            this.tabPage1.Controls.Add(this.veicDataGridView);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label6);
@@ -430,49 +414,36 @@
             this.tabPage1.Text = "Veículos";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
+            // veicDataGridView
             // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.AllowUserToResizeRows = false;
-            this.dataGridView4.AutoGenerateColumns = false;
-            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn8,
-            this.Documento});
-            this.dataGridView4.DataSource = this.pessoaBeanBindingSource;
-            this.dataGridView4.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dataGridView4.Location = new System.Drawing.Point(8, 51);
-            this.dataGridView4.MultiSelect = false;
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.RowHeadersVisible = false;
-            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(731, 333);
-            this.dataGridView4.TabIndex = 123;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "AnoEntrada";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Modelo";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // Documento
-            // 
-            this.Documento.DataPropertyName = "Documento";
-            this.Documento.HeaderText = "Placa";
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
+            this.veicDataGridView.AllowUserToAddRows = false;
+            this.veicDataGridView.AllowUserToDeleteRows = false;
+            this.veicDataGridView.AllowUserToResizeRows = false;
+            this.veicDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.veicDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.veicDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.veicDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.veicDataGridViewColumnModelo,
+            this.veicDataGridViewColumnMarca,
+            this.veicDataGridViewColumnPlaca,
+            this.veicDataGridViewColumnEPC});
+            this.veicDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.veicDataGridView.Location = new System.Drawing.Point(8, 51);
+            this.veicDataGridView.MultiSelect = false;
+            this.veicDataGridView.Name = "veicDataGridView";
+            this.veicDataGridView.ReadOnly = true;
+            this.veicDataGridView.RowHeadersVisible = false;
+            this.veicDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.veicDataGridView.Size = new System.Drawing.Size(731, 333);
+            this.veicDataGridView.TabIndex = 123;
+            this.veicDataGridView.SelectionChanged += new System.EventHandler(this.veicDataGridView_SelectionChanged);
             // 
             // button1
             // 
@@ -482,6 +453,7 @@
             this.button1.TabIndex = 121;
             this.button1.Text = "Apagar epc";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -491,6 +463,7 @@
             this.button2.TabIndex = 120;
             this.button2.Text = "Associar epc";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label6
             // 
@@ -520,8 +493,7 @@
             // 
             // comboBox3
             // 
-            this.comboBox3.DataSource = this.estabelecimentoBeanBindingSource;
-            this.comboBox3.DisplayMember = "Name";
+            this.comboBox3.DisplayMember = "Id";
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(6, 29);
             this.comboBox3.Name = "comboBox3";
@@ -578,6 +550,7 @@
             this.btn_conectar_leitor.TabIndex = 1;
             this.btn_conectar_leitor.Text = "Conectar leitor";
             this.btn_conectar_leitor.UseVisualStyleBackColor = false;
+            this.btn_conectar_leitor.Click += new System.EventHandler(this.btn_conectar_leitor_Click);
             // 
             // panel1
             // 
@@ -641,20 +614,18 @@
             this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TipoPessoaId});
-            this.dataGridView3.DataSource = this.pessoaBeanBindingSource;
             this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dataGridView3.Location = new System.Drawing.Point(-2, 50);
             this.dataGridView3.MultiSelect = false;
@@ -669,8 +640,8 @@
             // 
             this.TipoPessoaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.TipoPessoaId.DataPropertyName = "TipoPessoaId";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TipoPessoaId.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TipoPessoaId.DefaultCellStyle = dataGridViewCellStyle6;
             this.TipoPessoaId.HeaderText = "Tipo de usuário";
             this.TipoPessoaId.Name = "TipoPessoaId";
             this.TipoPessoaId.ReadOnly = true;
@@ -705,29 +676,75 @@
             this.panel4.Size = new System.Drawing.Size(753, 467);
             this.panel4.TabIndex = 76;
             // 
-            // pingLed
+            // visTipoTextBox
             // 
-            this.pingLed.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pingLed.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pingLed.Location = new System.Drawing.Point(8, 694);
-            this.pingLed.Name = "pingLed";
-            this.pingLed.Size = new System.Drawing.Size(12, 12);
-            this.pingLed.TabIndex = 77;
-            this.pingLed.Visible = false;
+            this.visTipoTextBox.Location = new System.Drawing.Point(553, 25);
+            this.visTipoTextBox.Name = "visTipoTextBox";
+            this.visTipoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.visTipoTextBox.TabIndex = 119;
             // 
-            // pingTimer
+            // visLeitoTextBox
             // 
-            this.pingTimer.Interval = 1000;
+            this.visLeitoTextBox.Location = new System.Drawing.Point(553, 64);
+            this.visLeitoTextBox.Name = "visLeitoTextBox";
+            this.visLeitoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.visLeitoTextBox.TabIndex = 120;
             // 
-            // label7
+            // visDataGridViewColumnNome
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 694);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 13);
-            this.label7.TabIndex = 78;
-            this.label7.Text = "Conexão com servidor";
-            this.label7.Visible = false;
+            this.visDataGridViewColumnNome.DataPropertyName = "Nome";
+            this.visDataGridViewColumnNome.HeaderText = "Nome";
+            this.visDataGridViewColumnNome.Name = "visDataGridViewColumnNome";
+            this.visDataGridViewColumnNome.ReadOnly = true;
+            // 
+            // visDataGridViewColumnLeito
+            // 
+            this.visDataGridViewColumnLeito.DataPropertyName = "Leito";
+            this.visDataGridViewColumnLeito.HeaderText = "Leito";
+            this.visDataGridViewColumnLeito.Name = "visDataGridViewColumnLeito";
+            this.visDataGridViewColumnLeito.ReadOnly = true;
+            // 
+            // visDataGridViewColumnTipo
+            // 
+            this.visDataGridViewColumnTipo.DataPropertyName = "Tipo";
+            this.visDataGridViewColumnTipo.HeaderText = "Tipo";
+            this.visDataGridViewColumnTipo.Name = "visDataGridViewColumnTipo";
+            this.visDataGridViewColumnTipo.ReadOnly = true;
+            // 
+            // visDataGridViewColumnEPC
+            // 
+            this.visDataGridViewColumnEPC.DataPropertyName = "EPC";
+            this.visDataGridViewColumnEPC.HeaderText = "EPC";
+            this.visDataGridViewColumnEPC.Name = "visDataGridViewColumnEPC";
+            this.visDataGridViewColumnEPC.ReadOnly = true;
+            // 
+            // veicDataGridViewColumnModelo
+            // 
+            this.veicDataGridViewColumnModelo.DataPropertyName = "Modelo";
+            this.veicDataGridViewColumnModelo.HeaderText = "Modelo";
+            this.veicDataGridViewColumnModelo.Name = "veicDataGridViewColumnModelo";
+            this.veicDataGridViewColumnModelo.ReadOnly = true;
+            // 
+            // veicDataGridViewColumnMarca
+            // 
+            this.veicDataGridViewColumnMarca.DataPropertyName = "Marca";
+            this.veicDataGridViewColumnMarca.HeaderText = "Marca";
+            this.veicDataGridViewColumnMarca.Name = "veicDataGridViewColumnMarca";
+            this.veicDataGridViewColumnMarca.ReadOnly = true;
+            // 
+            // veicDataGridViewColumnPlaca
+            // 
+            this.veicDataGridViewColumnPlaca.DataPropertyName = "Placa";
+            this.veicDataGridViewColumnPlaca.HeaderText = "Placa";
+            this.veicDataGridViewColumnPlaca.Name = "veicDataGridViewColumnPlaca";
+            this.veicDataGridViewColumnPlaca.ReadOnly = true;
+            // 
+            // veicDataGridViewColumnEPC
+            // 
+            this.veicDataGridViewColumnEPC.DataPropertyName = "EPC";
+            this.veicDataGridViewColumnEPC.HeaderText = "EPC";
+            this.veicDataGridViewColumnEPC.Name = "veicDataGridViewColumnEPC";
+            this.veicDataGridViewColumnEPC.ReadOnly = true;
             // 
             // Form1
             // 
@@ -736,8 +753,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(759, 710);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.pingLed);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label11);
@@ -748,20 +763,16 @@
             this.Name = "Form1";
             this.Text = "Sistema de Cadastro de Tags";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.estabelecimentoBeanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBeanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turmaBeanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoaBeanBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.Funcionários.ResumeLayout(false);
             this.Funcionários.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.terDataGridView)).EndInit();
             this.Visitantes.ResumeLayout(false);
             this.Visitantes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visDataGridView)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veicDataGridView)).EndInit();
             this.Administrativo.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -774,10 +785,6 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource estabelecimentoBeanBindingSource;
-        private System.Windows.Forms.BindingSource cursoBeanBindingSource;
-        private System.Windows.Forms.BindingSource turmaBeanBindingSource;
-        private System.Windows.Forms.BindingSource pessoaBeanBindingSource;
         //private System.Windows.Forms.DataGridViewTextBoxColumn matriculaDataGridViewTextBoxColumn;
         //private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         //private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -804,12 +811,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer relógio;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox visIdentTextBox;
         private System.Windows.Forms.Button btn_criar_visitantes;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_apagar_visitantes;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox visNomeTextBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btn_apagar;
         private System.Windows.Forms.Button btn_procurar;
@@ -823,35 +830,39 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxpessoavisit;
         private System.Windows.Forms.DataGridViewTextBoxColumn matriculaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Panel pingLed;
-        private System.Windows.Forms.Timer pingTimer;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridView terDataGridView;
+        private System.Windows.Forms.DataGridView visDataGridView;
+        private System.Windows.Forms.DataGridView veicDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstabelecimentoId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn terDataGridViewColumnNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn terDataGridViewColumnEmpresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn terDataGridViewColumnIdentificacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn terDataGridViewColumnEPC;
+        private System.Windows.Forms.TextBox visLeitoTextBox;
+        private System.Windows.Forms.TextBox visTipoTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visDataGridViewColumnNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visDataGridViewColumnLeito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visDataGridViewColumnTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visDataGridViewColumnEPC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnModelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnPlaca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnEPC;
         //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         //private System.Windows.Forms.DataGridViewTextBoxColumn Documento;

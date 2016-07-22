@@ -175,14 +175,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TagGen.exe" size="1660928">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TagGen.exe" size="1665024">
       <assemblyIdentity name="TagGen" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6EPf3pOfAVd0muZKTFOBVR22MtjPtyApjFvPb/A7ppM=</dsig:DigestValue>
+        <dsig:DigestValue>PNotNzKkFXHhSnX4Yqn82iGDOCevgJ+VZB64ljLG/K8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -213,13 +213,13 @@
       <dsig:DigestValue>fINqVd2/L8U5BP9FytubjwLbmesKSus5iIzDH8vRYrA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TagGen.exe.config" size="891">
+  <file name="TagGen.exe.config" size="1004">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>L844BgLMgn2XbwmTTCQT/MGndgMhi9MLFL2QSqRetm0=</dsig:DigestValue>
+      <dsig:DigestValue>x6BoFQSR7bbVlCTI4JzOcqVljhDvsydkuGaZBxYfj4c=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
