@@ -61,13 +61,13 @@ namespace TagGen
                     {
                         Marca = "Volkswagen",
                         Modelo = "Gol",
-                        Placa = "38274"
+                        Placa = "ABC-1234"
                     },
                     new Veiculo
                     {
-                        Marca = "Naosei",
+                        Marca = "Fiat",
                         Modelo = "Palio",
-                        Placa = "348424"
+                        Placa = "HQW-5678"
                     },
                 }) bd.Veiculos.Add(veic);
 
