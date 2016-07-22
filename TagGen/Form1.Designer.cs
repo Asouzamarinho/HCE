@@ -33,8 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Funcionários = new System.Windows.Forms.TabPage();
@@ -48,7 +46,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxPessoafunc = new System.Windows.Forms.TextBox();
             this.Visitantes = new System.Windows.Forms.TabPage();
+            this.visLeitoTextBox = new System.Windows.Forms.TextBox();
+            this.visTipoTextBox = new System.Windows.Forms.TextBox();
             this.visDataGridView = new System.Windows.Forms.DataGridView();
+            this.visDataGridViewColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visDataGridViewColumnLeito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visDataGridViewColumnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visDataGridViewColumnEPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,6 +67,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.veicDataGridView = new System.Windows.Forms.DataGridView();
+            this.veicDataGridViewColumnModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.veicDataGridViewColumnMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.veicDataGridViewColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.veicDataGridViewColumnEPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -79,21 +87,11 @@
             this.relógio = new System.Windows.Forms.Timer(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.TipoPessoaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_apagar = new System.Windows.Forms.Button();
             this.btn_procurar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.visTipoTextBox = new System.Windows.Forms.TextBox();
-            this.visLeitoTextBox = new System.Windows.Forms.TextBox();
-            this.visDataGridViewColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visDataGridViewColumnLeito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visDataGridViewColumnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visDataGridViewColumnEPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veicDataGridViewColumnModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veicDataGridViewColumnMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veicDataGridViewColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veicDataGridViewColumnEPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoLabel = new System.Windows.Forms.Label();
+            this.dadosLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Funcionários.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.terDataGridView)).BeginInit();
@@ -103,7 +101,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.veicDataGridView)).BeginInit();
             this.Administrativo.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -257,6 +254,20 @@
             this.Visitantes.Text = "Visitantes/Acomp.";
             this.Visitantes.UseVisualStyleBackColor = true;
             // 
+            // visLeitoTextBox
+            // 
+            this.visLeitoTextBox.Location = new System.Drawing.Point(553, 64);
+            this.visLeitoTextBox.Name = "visLeitoTextBox";
+            this.visLeitoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.visLeitoTextBox.TabIndex = 120;
+            // 
+            // visTipoTextBox
+            // 
+            this.visTipoTextBox.Location = new System.Drawing.Point(553, 25);
+            this.visTipoTextBox.Name = "visTipoTextBox";
+            this.visTipoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.visTipoTextBox.TabIndex = 119;
+            // 
             // visDataGridView
             // 
             this.visDataGridView.AllowUserToAddRows = false;
@@ -287,6 +298,34 @@
             this.visDataGridView.Size = new System.Drawing.Size(727, 292);
             this.visDataGridView.TabIndex = 118;
             this.visDataGridView.SelectionChanged += new System.EventHandler(this.visDataGridView_SelectionChanged);
+            // 
+            // visDataGridViewColumnNome
+            // 
+            this.visDataGridViewColumnNome.DataPropertyName = "Nome";
+            this.visDataGridViewColumnNome.HeaderText = "Nome";
+            this.visDataGridViewColumnNome.Name = "visDataGridViewColumnNome";
+            this.visDataGridViewColumnNome.ReadOnly = true;
+            // 
+            // visDataGridViewColumnLeito
+            // 
+            this.visDataGridViewColumnLeito.DataPropertyName = "Leito";
+            this.visDataGridViewColumnLeito.HeaderText = "Leito";
+            this.visDataGridViewColumnLeito.Name = "visDataGridViewColumnLeito";
+            this.visDataGridViewColumnLeito.ReadOnly = true;
+            // 
+            // visDataGridViewColumnTipo
+            // 
+            this.visDataGridViewColumnTipo.DataPropertyName = "Tipo";
+            this.visDataGridViewColumnTipo.HeaderText = "Tipo";
+            this.visDataGridViewColumnTipo.Name = "visDataGridViewColumnTipo";
+            this.visDataGridViewColumnTipo.ReadOnly = true;
+            // 
+            // visDataGridViewColumnEPC
+            // 
+            this.visDataGridViewColumnEPC.DataPropertyName = "EPC";
+            this.visDataGridViewColumnEPC.HeaderText = "EPC";
+            this.visDataGridViewColumnEPC.Name = "visDataGridViewColumnEPC";
+            this.visDataGridViewColumnEPC.ReadOnly = true;
             // 
             // label2
             // 
@@ -445,6 +484,34 @@
             this.veicDataGridView.TabIndex = 123;
             this.veicDataGridView.SelectionChanged += new System.EventHandler(this.veicDataGridView_SelectionChanged);
             // 
+            // veicDataGridViewColumnModelo
+            // 
+            this.veicDataGridViewColumnModelo.DataPropertyName = "Modelo";
+            this.veicDataGridViewColumnModelo.HeaderText = "Modelo";
+            this.veicDataGridViewColumnModelo.Name = "veicDataGridViewColumnModelo";
+            this.veicDataGridViewColumnModelo.ReadOnly = true;
+            // 
+            // veicDataGridViewColumnMarca
+            // 
+            this.veicDataGridViewColumnMarca.DataPropertyName = "Marca";
+            this.veicDataGridViewColumnMarca.HeaderText = "Marca";
+            this.veicDataGridViewColumnMarca.Name = "veicDataGridViewColumnMarca";
+            this.veicDataGridViewColumnMarca.ReadOnly = true;
+            // 
+            // veicDataGridViewColumnPlaca
+            // 
+            this.veicDataGridViewColumnPlaca.DataPropertyName = "Placa";
+            this.veicDataGridViewColumnPlaca.HeaderText = "Placa";
+            this.veicDataGridViewColumnPlaca.Name = "veicDataGridViewColumnPlaca";
+            this.veicDataGridViewColumnPlaca.ReadOnly = true;
+            // 
+            // veicDataGridViewColumnEPC
+            // 
+            this.veicDataGridViewColumnEPC.DataPropertyName = "EPC";
+            this.veicDataGridViewColumnEPC.HeaderText = "EPC";
+            this.veicDataGridViewColumnEPC.Name = "veicDataGridViewColumnEPC";
+            this.veicDataGridViewColumnEPC.ReadOnly = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(650, 406);
@@ -598,8 +665,9 @@
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.dadosLabel);
+            this.panel3.Controls.Add(this.tipoLabel);
             this.panel3.Controls.Add(this.btn_conectar_leitor);
-            this.panel3.Controls.Add(this.dataGridView3);
             this.panel3.Controls.Add(this.btn_apagar);
             this.panel3.Controls.Add(this.btn_procurar);
             this.panel3.Controls.Add(this.label5);
@@ -608,44 +676,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(753, 97);
             this.panel3.TabIndex = 75;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TipoPessoaId});
-            this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dataGridView3.Location = new System.Drawing.Point(-2, 50);
-            this.dataGridView3.MultiSelect = false;
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(755, 42);
-            this.dataGridView3.TabIndex = 5;
-            // 
-            // TipoPessoaId
-            // 
-            this.TipoPessoaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.TipoPessoaId.DataPropertyName = "TipoPessoaId";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TipoPessoaId.DefaultCellStyle = dataGridViewCellStyle6;
-            this.TipoPessoaId.HeaderText = "Tipo de usuário";
-            this.TipoPessoaId.Name = "TipoPessoaId";
-            this.TipoPessoaId.ReadOnly = true;
-            this.TipoPessoaId.Width = 200;
             // 
             // btn_apagar
             // 
@@ -664,6 +694,7 @@
             this.btn_procurar.TabIndex = 3;
             this.btn_procurar.Text = "Procurar usuário";
             this.btn_procurar.UseVisualStyleBackColor = true;
+            this.btn_procurar.Click += new System.EventHandler(this.btn_procurar_Click);
             // 
             // panel4
             // 
@@ -676,75 +707,23 @@
             this.panel4.Size = new System.Drawing.Size(753, 467);
             this.panel4.TabIndex = 76;
             // 
-            // visTipoTextBox
+            // tipoLabel
             // 
-            this.visTipoTextBox.Location = new System.Drawing.Point(553, 25);
-            this.visTipoTextBox.Name = "visTipoTextBox";
-            this.visTipoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.visTipoTextBox.TabIndex = 119;
+            this.tipoLabel.AutoSize = true;
+            this.tipoLabel.Location = new System.Drawing.Point(567, 42);
+            this.tipoLabel.Name = "tipoLabel";
+            this.tipoLabel.Size = new System.Drawing.Size(83, 13);
+            this.tipoLabel.TabIndex = 101;
+            this.tipoLabel.Text = "Tipo do usuário:";
             // 
-            // visLeitoTextBox
+            // dadosLabel
             // 
-            this.visLeitoTextBox.Location = new System.Drawing.Point(553, 64);
-            this.visLeitoTextBox.Name = "visLeitoTextBox";
-            this.visLeitoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.visLeitoTextBox.TabIndex = 120;
-            // 
-            // visDataGridViewColumnNome
-            // 
-            this.visDataGridViewColumnNome.DataPropertyName = "Nome";
-            this.visDataGridViewColumnNome.HeaderText = "Nome";
-            this.visDataGridViewColumnNome.Name = "visDataGridViewColumnNome";
-            this.visDataGridViewColumnNome.ReadOnly = true;
-            // 
-            // visDataGridViewColumnLeito
-            // 
-            this.visDataGridViewColumnLeito.DataPropertyName = "Leito";
-            this.visDataGridViewColumnLeito.HeaderText = "Leito";
-            this.visDataGridViewColumnLeito.Name = "visDataGridViewColumnLeito";
-            this.visDataGridViewColumnLeito.ReadOnly = true;
-            // 
-            // visDataGridViewColumnTipo
-            // 
-            this.visDataGridViewColumnTipo.DataPropertyName = "Tipo";
-            this.visDataGridViewColumnTipo.HeaderText = "Tipo";
-            this.visDataGridViewColumnTipo.Name = "visDataGridViewColumnTipo";
-            this.visDataGridViewColumnTipo.ReadOnly = true;
-            // 
-            // visDataGridViewColumnEPC
-            // 
-            this.visDataGridViewColumnEPC.DataPropertyName = "EPC";
-            this.visDataGridViewColumnEPC.HeaderText = "EPC";
-            this.visDataGridViewColumnEPC.Name = "visDataGridViewColumnEPC";
-            this.visDataGridViewColumnEPC.ReadOnly = true;
-            // 
-            // veicDataGridViewColumnModelo
-            // 
-            this.veicDataGridViewColumnModelo.DataPropertyName = "Modelo";
-            this.veicDataGridViewColumnModelo.HeaderText = "Modelo";
-            this.veicDataGridViewColumnModelo.Name = "veicDataGridViewColumnModelo";
-            this.veicDataGridViewColumnModelo.ReadOnly = true;
-            // 
-            // veicDataGridViewColumnMarca
-            // 
-            this.veicDataGridViewColumnMarca.DataPropertyName = "Marca";
-            this.veicDataGridViewColumnMarca.HeaderText = "Marca";
-            this.veicDataGridViewColumnMarca.Name = "veicDataGridViewColumnMarca";
-            this.veicDataGridViewColumnMarca.ReadOnly = true;
-            // 
-            // veicDataGridViewColumnPlaca
-            // 
-            this.veicDataGridViewColumnPlaca.DataPropertyName = "Placa";
-            this.veicDataGridViewColumnPlaca.HeaderText = "Placa";
-            this.veicDataGridViewColumnPlaca.Name = "veicDataGridViewColumnPlaca";
-            this.veicDataGridViewColumnPlaca.ReadOnly = true;
-            // 
-            // veicDataGridViewColumnEPC
-            // 
-            this.veicDataGridViewColumnEPC.DataPropertyName = "EPC";
-            this.veicDataGridViewColumnEPC.HeaderText = "EPC";
-            this.veicDataGridViewColumnEPC.Name = "veicDataGridViewColumnEPC";
-            this.veicDataGridViewColumnEPC.ReadOnly = true;
+            this.dadosLabel.AutoSize = true;
+            this.dadosLabel.Location = new System.Drawing.Point(567, 59);
+            this.dadosLabel.Name = "dadosLabel";
+            this.dadosLabel.Size = new System.Drawing.Size(41, 13);
+            this.dadosLabel.TabIndex = 102;
+            this.dadosLabel.Text = "Dados:";
             // 
             // Form1
             // 
@@ -776,7 +755,6 @@
             this.Administrativo.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -822,11 +800,9 @@
         private System.Windows.Forms.Button btn_procurar;
         private System.Windows.Forms.Button btn_excluir_visitantes;
         private System.Windows.Forms.Button btn_associar_visitantes;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoPessoaId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxpessoavisit;
         private System.Windows.Forms.DataGridViewTextBoxColumn matriculaDataGridViewTextBoxColumn;
@@ -863,6 +839,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnPlaca;
         private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnEPC;
+        private System.Windows.Forms.Label dadosLabel;
+        private System.Windows.Forms.Label tipoLabel;
         //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         //private System.Windows.Forms.DataGridViewTextBoxColumn Documento;

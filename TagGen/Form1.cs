@@ -216,5 +216,46 @@ namespace TagGen
 
             veicDataGridView.DataSource = bd.Veiculos.ToList();
         }
+
+        private void btn_procurar_Click(object sender, EventArgs e)
+        {
+            if (textBoxEPC.Text != "")
+            {
+                string dados;
+
+                try
+                {
+                    dados = bd.Terceirizados.Single(t => t.EPC == textBoxEPC.Text).Nome;
+
+                    tipoLabel.Text = "Terceirizado";
+                }
+                catch
+                {
+                    try
+                    {
+                        dados = bd.Visitantes.Single(t => t.EPC == textBoxEPC.Text).Nome;
+
+                        tipoLabel.Text = "Visitantes";
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            dados = bd.Veiculos.Single(t => t.EPC == textBoxEPC.Text).Placa;
+
+                            tipoLabel.Text = "Veículos";
+                        }
+                        catch
+                        {
+                            dados = "Não encontrado";
+
+                            tipoLabel.Text = "";
+                        }
+                    }
+                }
+
+                dadosLabel.Text = dados;
+            }
+        }
     }
 }
