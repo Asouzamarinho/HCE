@@ -87,11 +87,11 @@
             this.relógio = new System.Windows.Forms.Timer(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dadosLabel = new System.Windows.Forms.Label();
+            this.tipoLabel = new System.Windows.Forms.Label();
             this.btn_apagar = new System.Windows.Forms.Button();
             this.btn_procurar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tipoLabel = new System.Windows.Forms.Label();
-            this.dadosLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Funcionários.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.terDataGridView)).BeginInit();
@@ -677,6 +677,24 @@
             this.panel3.Size = new System.Drawing.Size(753, 97);
             this.panel3.TabIndex = 75;
             // 
+            // dadosLabel
+            // 
+            this.dadosLabel.AutoSize = true;
+            this.dadosLabel.Location = new System.Drawing.Point(567, 59);
+            this.dadosLabel.Name = "dadosLabel";
+            this.dadosLabel.Size = new System.Drawing.Size(41, 13);
+            this.dadosLabel.TabIndex = 102;
+            this.dadosLabel.Text = "Dados:";
+            // 
+            // tipoLabel
+            // 
+            this.tipoLabel.AutoSize = true;
+            this.tipoLabel.Location = new System.Drawing.Point(567, 42);
+            this.tipoLabel.Name = "tipoLabel";
+            this.tipoLabel.Size = new System.Drawing.Size(83, 13);
+            this.tipoLabel.TabIndex = 101;
+            this.tipoLabel.Text = "Tipo do usuário:";
+            // 
             // btn_apagar
             // 
             this.btn_apagar.Location = new System.Drawing.Point(669, 12);
@@ -685,6 +703,7 @@
             this.btn_apagar.TabIndex = 4;
             this.btn_apagar.Text = "Apagar";
             this.btn_apagar.UseVisualStyleBackColor = true;
+            this.btn_apagar.Click += new System.EventHandler(this.btn_apagar_Click);
             // 
             // btn_procurar
             // 
@@ -706,24 +725,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(753, 467);
             this.panel4.TabIndex = 76;
-            // 
-            // tipoLabel
-            // 
-            this.tipoLabel.AutoSize = true;
-            this.tipoLabel.Location = new System.Drawing.Point(567, 42);
-            this.tipoLabel.Name = "tipoLabel";
-            this.tipoLabel.Size = new System.Drawing.Size(83, 13);
-            this.tipoLabel.TabIndex = 101;
-            this.tipoLabel.Text = "Tipo do usuário:";
-            // 
-            // dadosLabel
-            // 
-            this.dadosLabel.AutoSize = true;
-            this.dadosLabel.Location = new System.Drawing.Point(567, 59);
-            this.dadosLabel.Name = "dadosLabel";
-            this.dadosLabel.Size = new System.Drawing.Size(41, 13);
-            this.dadosLabel.TabIndex = 102;
-            this.dadosLabel.Text = "Dados:";
             // 
             // Form1
             // 

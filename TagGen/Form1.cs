@@ -13,6 +13,8 @@ namespace TagGen
     public partial class Form1 : Form
     {
         BD bd;
+        Action deletar;
+        Action refresh;
         public Form1()
         {
             InitializeComponent();
@@ -225,7 +227,10 @@ namespace TagGen
 
                 try
                 {
-                    dados = bd.Terceirizados.Single(t => t.EPC == textBoxEPC.Text).Nome;
+                    var v = bd.Terceirizados.Single(t => t.EPC == textBoxEPC.Text);
+                    dados = v.Nome;
+                    deletar = () => bd.Terceirizados.Remove(v);
+                    refresh = () => terDataGridView.DataSource = bd.Terceirizados.ToList();
 
                     tipoLabel.Text = "Terceirizado";
                 }
@@ -233,7 +238,10 @@ namespace TagGen
                 {
                     try
                     {
-                        dados = bd.Visitantes.Single(t => t.EPC == textBoxEPC.Text).Nome;
+                        var v = bd.Visitantes.Single(t => t.EPC == textBoxEPC.Text);
+                        dados = v.Nome;
+                        deletar = () => bd.Visitantes.Remove(v);
+                        refresh = () => visDataGridView.DataSource = bd.Visitantes.ToList();
 
                         tipoLabel.Text = "Visitantes";
                     }
@@ -241,13 +249,18 @@ namespace TagGen
                     {
                         try
                         {
-                            dados = bd.Veiculos.Single(t => t.EPC == textBoxEPC.Text).Placa;
+                            var v = bd.Veiculos.Single(t => t.EPC == textBoxEPC.Text);
+                            dados = v.Placa;
+                            deletar = () => bd.Veiculos.Remove(v);
+                            refresh = () => veicDataGridView.DataSource = bd.Veiculos.ToList();
 
                             tipoLabel.Text = "Veículos";
                         }
                         catch
                         {
                             dados = "Não encontrado";
+                            deletar = null;
+                            refresh = null;
 
                             tipoLabel.Text = "";
                         }
@@ -256,6 +269,17 @@ namespace TagGen
 
                 dadosLabel.Text = dados;
             }
+        }
+
+        private void btn_apagar_Click(object sender, EventArgs e)
+        {
+            if (deletar != null)
+                deletar();
+
+            bd.SaveChanges();
+
+            if (refresh != null)
+                refresh();
         }
     }
 }
