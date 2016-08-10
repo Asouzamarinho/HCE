@@ -91,6 +91,7 @@
             this.btn_procurar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.veicDataGridViewColumnModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -497,6 +498,7 @@
             this.veicDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.veicDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.veicDataGridViewColumnModelo,
+            this.Column5,
             this.Column4,
             this.Column1,
             this.Column2,
@@ -735,6 +737,13 @@
             this.veicDataGridViewColumnModelo.Name = "veicDataGridViewColumnModelo";
             this.veicDataGridViewColumnModelo.ReadOnly = true;
             // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Patente";
+            this.Column5.HeaderText = "Patente";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
             // Column4
             // 
             this.Column4.DataPropertyName = "Cor";
@@ -892,6 +901,7 @@
         private System.Windows.Forms.Button btn_importar_terc;
         private System.Windows.Forms.Button btn_importar_veic;
         private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnModelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

@@ -37,7 +37,9 @@ namespace TagGen
         {
             bd = new BD();
 
+        #if DEBUG
             bd.Database.Delete();
+        #endif
 
             terDataGridView.AutoGenerateColumns = false;
             terDataGridView.DataSource = bd.Terceirizados.ToList();
@@ -256,39 +258,24 @@ namespace TagGen
 
         private void btn_apagar_Click(object sender, EventArgs e)
         {
-            deletar?.Invoke();
+            if (deletar != null)
+                deletar();
 
             bd.SaveChanges();
 
-            refresh?.Invoke();
+            if (refresh != null)
+                refresh();
         }
 
-        private void btn_importar_terc_Click(object sender, EventArgs e)
+        //https://social.msdn.microsoft.com/Forums/en-US/1d5c04c7-157f-4955-a14b-41d912d50a64/how-to-fix-error-the-microsoftaceoledb120-provider-is-not-registered-on-the-local-machine?forum=vstsdb
+        private void Importar<T>(Func<string[], T> func, int skip = 0) where T : class
         {
             var fileDialog = new OpenFileDialog();
 
             fileDialog.ShowDialog();
 
-            var terceirizados = Importar(fileDialog.FileName, columns => new Terceirizado
-            {
-                Empresa = columns[0],
-                Nome = columns[1],
-                Identificacao = columns[2],
-                EPC = columns[3]
-            }).ToList();
+            string fileName = fileDialog.FileName;
 
-            terceirizados.Remove(terceirizados.First());
-
-            bd.Terceirizados.AddRange(terceirizados);
-
-            bd.SaveChanges();
-
-            terDataGridView.DataSource = bd.Terceirizados.ToList();
-        }
-
-        //https://social.msdn.microsoft.com/Forums/en-US/1d5c04c7-157f-4955-a14b-41d912d50a64/how-to-fix-error-the-microsoftaceoledb120-provider-is-not-registered-on-the-local-machine?forum=vstsdb
-        private IEnumerable<T> Importar<T>(string fileName, Func<string[], T> func)
-        {
             var ds = new DataSet();
 
             var connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + fileName + ";Extended Properties=\"Excel 12.0;IMEX=1;HDR=NO;TypeGuessRows=0;ImportMixedTypes=Text\""; ;
@@ -307,16 +294,30 @@ namespace TagGen
                 }
             }
 
-            return ds.Tables[0].Rows.Cast<DataRow>().Select(row => func(row.ItemArray.Select(o => o is string ? (string)o : string.Empty).ToArray()));
+            var t = ds.Tables[0].Rows.Cast<DataRow>().Skip(skip).Select(row => func(row.ItemArray.Select(o => o is string ? (string)o : string.Empty).ToArray()));
+
+            bd.Set<T>().AddRange(t);
+
+            bd.SaveChanges();
+
+        }
+
+        private void btn_importar_terc_Click(object sender, EventArgs e)
+        {
+            Importar(columns => new Terceirizado
+            {
+                Empresa = columns[0],
+                Nome = columns[1],
+                Identificacao = columns[2],
+                EPC = columns[3]
+            }, 1);
+
+            terDataGridView.DataSource = bd.Terceirizados.ToList();
         }
 
         private void btn_importar_veic_Click(object sender, EventArgs e)
         {
-            var fileDialog = new OpenFileDialog();
-
-            fileDialog.ShowDialog();
-
-            var veiculos = Importar(fileDialog.FileName, columns => new Veiculo
+            Importar(columns => new Veiculo
             {
                 Selo = columns[0],
                 Motorista = columns[1],
@@ -325,14 +326,7 @@ namespace TagGen
                 Modelo = columns[4],
                 Placa = columns[6],
                 Setor = columns[7]
-            }).ToList();
-
-            veiculos.Remove(veiculos.First());
-            veiculos.Remove(veiculos.First());
-
-            bd.Veiculos.AddRange(veiculos);
-
-            bd.SaveChanges();
+            }, 2);
 
             veicDataGridView.DataSource = bd.Veiculos.ToList();
         }
