@@ -36,6 +36,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Funcionários = new System.Windows.Forms.TabPage();
+            this.btn_importar_terc = new System.Windows.Forms.Button();
             this.terDataGridView = new System.Windows.Forms.DataGridView();
             this.terDataGridViewColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.terDataGridViewColumnEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,11 +67,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_importar_veic = new System.Windows.Forms.Button();
             this.veicDataGridView = new System.Windows.Forms.DataGridView();
-            this.veicDataGridViewColumnModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veicDataGridViewColumnMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veicDataGridViewColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veicDataGridViewColumnEPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -92,6 +90,13 @@
             this.btn_apagar = new System.Windows.Forms.Button();
             this.btn_procurar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.veicDataGridViewColumnModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.veicDataGridViewColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.veicDataGridViewColumnEPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.Funcionários.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.terDataGridView)).BeginInit();
@@ -119,6 +124,7 @@
             // 
             // Funcionários
             // 
+            this.Funcionários.Controls.Add(this.btn_importar_terc);
             this.Funcionários.Controls.Add(this.terDataGridView);
             this.Funcionários.Controls.Add(this.btn_apagar_funcionarios);
             this.Funcionários.Controls.Add(this.btn_associar_funcionarios);
@@ -131,6 +137,16 @@
             this.Funcionários.TabIndex = 1;
             this.Funcionários.Text = "Terceirizados";
             this.Funcionários.UseVisualStyleBackColor = true;
+            // 
+            // btn_importar_terc
+            // 
+            this.btn_importar_terc.Location = new System.Drawing.Point(645, 401);
+            this.btn_importar_terc.Name = "btn_importar_terc";
+            this.btn_importar_terc.Size = new System.Drawing.Size(91, 23);
+            this.btn_importar_terc.TabIndex = 108;
+            this.btn_importar_terc.Text = "Importar";
+            this.btn_importar_terc.UseVisualStyleBackColor = true;
+            this.btn_importar_terc.Click += new System.EventHandler(this.btn_importar_terc_Click);
             // 
             // terDataGridView
             // 
@@ -195,7 +211,7 @@
             // 
             // btn_apagar_funcionarios
             // 
-            this.btn_apagar_funcionarios.Location = new System.Drawing.Point(650, 401);
+            this.btn_apagar_funcionarios.Location = new System.Drawing.Point(548, 401);
             this.btn_apagar_funcionarios.Name = "btn_apagar_funcionarios";
             this.btn_apagar_funcionarios.Size = new System.Drawing.Size(91, 23);
             this.btn_apagar_funcionarios.TabIndex = 4;
@@ -205,7 +221,7 @@
             // 
             // btn_associar_funcionarios
             // 
-            this.btn_associar_funcionarios.Location = new System.Drawing.Point(553, 401);
+            this.btn_associar_funcionarios.Location = new System.Drawing.Point(451, 401);
             this.btn_associar_funcionarios.Name = "btn_associar_funcionarios";
             this.btn_associar_funcionarios.Size = new System.Drawing.Size(91, 23);
             this.btn_associar_funcionarios.TabIndex = 3;
@@ -227,7 +243,7 @@
             this.textBoxPessoafunc.Location = new System.Drawing.Point(9, 403);
             this.textBoxPessoafunc.Name = "textBoxPessoafunc";
             this.textBoxPessoafunc.ReadOnly = true;
-            this.textBoxPessoafunc.Size = new System.Drawing.Size(539, 20);
+            this.textBoxPessoafunc.Size = new System.Drawing.Size(436, 20);
             this.textBoxPessoafunc.TabIndex = 2;
             // 
             // Visitantes
@@ -438,6 +454,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btn_importar_veic);
             this.tabPage1.Controls.Add(this.veicDataGridView);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.button2);
@@ -452,6 +469,16 @@
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Veículos";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btn_importar_veic
+            // 
+            this.btn_importar_veic.Location = new System.Drawing.Point(648, 406);
+            this.btn_importar_veic.Name = "btn_importar_veic";
+            this.btn_importar_veic.Size = new System.Drawing.Size(91, 23);
+            this.btn_importar_veic.TabIndex = 124;
+            this.btn_importar_veic.Text = "Importar";
+            this.btn_importar_veic.UseVisualStyleBackColor = true;
+            this.btn_importar_veic.Click += new System.EventHandler(this.btn_importar_veic_Click);
             // 
             // veicDataGridView
             // 
@@ -470,8 +497,11 @@
             this.veicDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.veicDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.veicDataGridViewColumnModelo,
-            this.veicDataGridViewColumnMarca,
+            this.Column4,
+            this.Column1,
+            this.Column2,
             this.veicDataGridViewColumnPlaca,
+            this.Column3,
             this.veicDataGridViewColumnEPC});
             this.veicDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.veicDataGridView.Location = new System.Drawing.Point(8, 51);
@@ -484,37 +514,9 @@
             this.veicDataGridView.TabIndex = 123;
             this.veicDataGridView.SelectionChanged += new System.EventHandler(this.veicDataGridView_SelectionChanged);
             // 
-            // veicDataGridViewColumnModelo
-            // 
-            this.veicDataGridViewColumnModelo.DataPropertyName = "Modelo";
-            this.veicDataGridViewColumnModelo.HeaderText = "Modelo";
-            this.veicDataGridViewColumnModelo.Name = "veicDataGridViewColumnModelo";
-            this.veicDataGridViewColumnModelo.ReadOnly = true;
-            // 
-            // veicDataGridViewColumnMarca
-            // 
-            this.veicDataGridViewColumnMarca.DataPropertyName = "Marca";
-            this.veicDataGridViewColumnMarca.HeaderText = "Marca";
-            this.veicDataGridViewColumnMarca.Name = "veicDataGridViewColumnMarca";
-            this.veicDataGridViewColumnMarca.ReadOnly = true;
-            // 
-            // veicDataGridViewColumnPlaca
-            // 
-            this.veicDataGridViewColumnPlaca.DataPropertyName = "Placa";
-            this.veicDataGridViewColumnPlaca.HeaderText = "Placa";
-            this.veicDataGridViewColumnPlaca.Name = "veicDataGridViewColumnPlaca";
-            this.veicDataGridViewColumnPlaca.ReadOnly = true;
-            // 
-            // veicDataGridViewColumnEPC
-            // 
-            this.veicDataGridViewColumnEPC.DataPropertyName = "EPC";
-            this.veicDataGridViewColumnEPC.HeaderText = "EPC";
-            this.veicDataGridViewColumnEPC.Name = "veicDataGridViewColumnEPC";
-            this.veicDataGridViewColumnEPC.ReadOnly = true;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(650, 406);
+            this.button1.Location = new System.Drawing.Point(551, 406);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 23);
             this.button1.TabIndex = 121;
@@ -524,7 +526,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(553, 406);
+            this.button2.Location = new System.Drawing.Point(454, 406);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(91, 23);
             this.button2.TabIndex = 120;
@@ -546,7 +548,7 @@
             this.textBox1.Location = new System.Drawing.Point(9, 408);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(539, 20);
+            this.textBox1.Size = new System.Drawing.Size(439, 20);
             this.textBox1.TabIndex = 119;
             // 
             // label3
@@ -726,6 +728,55 @@
             this.panel4.Size = new System.Drawing.Size(753, 467);
             this.panel4.TabIndex = 76;
             // 
+            // veicDataGridViewColumnModelo
+            // 
+            this.veicDataGridViewColumnModelo.DataPropertyName = "Modelo";
+            this.veicDataGridViewColumnModelo.HeaderText = "Modelo";
+            this.veicDataGridViewColumnModelo.Name = "veicDataGridViewColumnModelo";
+            this.veicDataGridViewColumnModelo.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Cor";
+            this.Column4.HeaderText = "Cor";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Selo";
+            this.Column1.HeaderText = "# Selo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Motorista";
+            this.Column2.HeaderText = "Motorista";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // veicDataGridViewColumnPlaca
+            // 
+            this.veicDataGridViewColumnPlaca.DataPropertyName = "Placa";
+            this.veicDataGridViewColumnPlaca.HeaderText = "Placa";
+            this.veicDataGridViewColumnPlaca.Name = "veicDataGridViewColumnPlaca";
+            this.veicDataGridViewColumnPlaca.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Setor";
+            this.Column3.HeaderText = "Setor";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // veicDataGridViewColumnEPC
+            // 
+            this.veicDataGridViewColumnEPC.DataPropertyName = "EPC";
+            this.veicDataGridViewColumnEPC.HeaderText = "EPC";
+            this.veicDataGridViewColumnEPC.Name = "veicDataGridViewColumnEPC";
+            this.veicDataGridViewColumnEPC.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -836,12 +887,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn visDataGridViewColumnLeito;
         private System.Windows.Forms.DataGridViewTextBoxColumn visDataGridViewColumnTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn visDataGridViewColumnEPC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnModelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnMarca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnPlaca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnEPC;
         private System.Windows.Forms.Label dadosLabel;
         private System.Windows.Forms.Label tipoLabel;
+        private System.Windows.Forms.Button btn_importar_terc;
+        private System.Windows.Forms.Button btn_importar_veic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnModelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnPlaca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnEPC;
         //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         //private System.Windows.Forms.DataGridViewTextBoxColumn Documento;

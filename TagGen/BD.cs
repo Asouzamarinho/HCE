@@ -29,11 +29,13 @@ namespace TagGen
     {
         [Key] public int Id { get; set; }
         public string Modelo { get; set; }
-        public string Marca { get; set; }
         public string Placa { get; set; }
         public string Cor { get; set; }
         public string Motorista { get; set; }
         public string EPC { get; set; }
+        public string Patente { get; set; }
+        public string Selo { get; set; }
+        public string Setor { get; set; }
     }
 
     public class Visitante
