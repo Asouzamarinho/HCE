@@ -310,7 +310,7 @@ namespace TagGen
 
                 var data = ds.Tables[0].Rows.Cast<DataRow>().Skip(skip).Select(row =>
                 {
-                    var colunas = row.ItemArray.Select(o => o is string ? (string)o : string.Empty).ToArray();
+                    var cells = row.ItemArray.Take(properties.Length).Select(cell => cell is string ? (string)cell : string.Empty).ToArray();
 
                     T t = new T();
 
@@ -318,7 +318,7 @@ namespace TagGen
                     {
                         try
                         {
-                            if (s != null) s(t, colunas[c]);
+                            if (s != null) s(t, cells[c]);
                         }
                         catch (IndexOutOfRangeException)
                         {
