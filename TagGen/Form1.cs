@@ -284,26 +284,25 @@ namespace TagGen
             if (fileName == "")
                 return;
 
-            var ds = new DataSet();
-
-            var connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + fileName + ";Extended Properties=\"Excel 12.0;IMEX=1;HDR=NO;TypeGuessRows=0;ImportMixedTypes=Text\""; ;
-            using (var conn = new OleDbConnection(connectionString))
-            {
-                conn.Open();
-
-                var sheets = conn.GetOleDbSchemaTable(System.Data.OleDb.OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
-                using (var cmd = conn.CreateCommand())
-                {
-                    cmd.CommandText = "SELECT * FROM [" + sheets.Rows[0]["TABLE_NAME"].ToString() + "] ";
-
-                    var adapter = new OleDbDataAdapter(cmd);
-                    
-                    adapter.Fill(ds);
-                }
-            }
-
             try
             {
+                var ds = new DataSet();
+
+                var connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + fileName + ";Extended Properties=\"Excel 12.0;IMEX=1;HDR=NO;TypeGuessRows=0;ImportMixedTypes=Text\""; ;
+                using (var conn = new OleDbConnection(connectionString))
+                {
+                    conn.Open();
+
+                    var sheets = conn.GetOleDbSchemaTable(System.Data.OleDb.OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
+                    using (var cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT * FROM [" + sheets.Rows[0]["TABLE_NAME"].ToString() + "] ";
+
+                        var adapter = new OleDbDataAdapter(cmd);
+
+                        adapter.Fill(ds);
+                    }
+                }
 
                 var setters = properties.Select(p => p != null ? p.ToSetter().Compile() : null);
 
@@ -332,18 +331,21 @@ namespace TagGen
                     return t;
                 });
 
-                bd.Set<T>().AddRange(data);
+                try
+                {
+                    bd.Set<T>().AddRange(data);
+                }
+                catch(InvalidOperationException ex)
+                {
+                    throw new InvalidOperationException("O banco não contém essa tabela");
+                }
+                
+                bd.SaveChanges();
             }
-            catch (IndexOutOfRangeException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (InvalidOperationException)
-            {
-                MessageBox.Show("O banco não contém essa tabela");
-            }
-
-            bd.SaveChanges();
         }
 
         private void btn_importar_terc_Click(object sender, EventArgs e)
