@@ -268,13 +268,20 @@ namespace TagGen
         }
 
         //https://social.msdn.microsoft.com/Forums/en-US/1d5c04c7-157f-4955-a14b-41d912d50a64/how-to-fix-error-the-microsoftaceoledb120-provider-is-not-registered-on-the-local-machine?forum=vstsdb
-        private void Importar<T>(Func<string[], T> func, int skip = 0) where T : class
+        private void Importar<T>(Func<Func<int, string>, T> func, int skip = 0) where T : class
         {
-            var fileDialog = new OpenFileDialog();
+            var fileDialog = new OpenFileDialog
+            {
+                Title = "Selecione uma planilha para importar",
+                Filter = "Planilha|*.xlsx;*.xls"
+            };
 
             fileDialog.ShowDialog();
 
             string fileName = fileDialog.FileName;
+
+            if (fileName == "")
+                return;
 
             var ds = new DataSet();
 
@@ -294,22 +301,47 @@ namespace TagGen
                 }
             }
 
-            var t = ds.Tables[0].Rows.Cast<DataRow>().Skip(skip).Select(row => func(row.ItemArray.Select(o => o is string ? (string)o : string.Empty).ToArray()));
+            try
+            {
+                var t = ds.Tables[0].Rows.Cast<DataRow>().Skip(skip).Select(row =>
+                {
+                    var colunas = row.ItemArray.Select(o => o is string ? (string)o : string.Empty).ToArray();
 
-            bd.Set<T>().AddRange(t);
+                    return func(c =>
+                    {
+                        try
+                        {
+                            return colunas[c];
+                        }
+                        catch (IndexOutOfRangeException)
+                        {
+                            throw new IndexOutOfRangeException("A planilha não contém a " + (c + 1) + "ª coluna.");
+                        }
+                    });
+                });
+
+                bd.Set<T>().AddRange(t);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("O banco não contém essa tabela");
+            }
 
             bd.SaveChanges();
-
         }
 
         private void btn_importar_terc_Click(object sender, EventArgs e)
         {
-            Importar(columns => new Terceirizado
+            Importar(coluna => new Terceirizado
             {
-                Empresa = columns[0],
-                Nome = columns[1],
-                Identificacao = columns[2],
-                EPC = columns[3]
+                Empresa = coluna(0),
+                Nome = coluna(1),
+                Identificacao = coluna(2),
+                EPC = coluna(3)
             }, 1);
 
             terDataGridView.DataSource = bd.Terceirizados.ToList();
@@ -317,15 +349,15 @@ namespace TagGen
 
         private void btn_importar_veic_Click(object sender, EventArgs e)
         {
-            Importar(columns => new Veiculo
+            Importar(coluna => new Veiculo
             {
-                Selo = columns[0],
-                Motorista = columns[1],
-                Patente = columns[2],
-                Cor = columns[3],
-                Modelo = columns[4],
-                Placa = columns[6],
-                Setor = columns[7]
+                Selo = coluna(0),
+                Motorista = coluna(1),
+                Patente = coluna(2),
+                Cor = coluna(3),
+                Modelo = coluna(4),
+                Placa = coluna(6),
+                Setor = coluna(7)
             }, 2);
 
             veicDataGridView.DataSource = bd.Veiculos.ToList();

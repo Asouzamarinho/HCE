@@ -90,11 +90,11 @@
             this.btn_apagar = new System.Windows.Forms.Button();
             this.btn_procurar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.veicDataGridViewColumnModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.veicDataGridViewColumnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.veicDataGridViewColumnEPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -497,11 +497,11 @@
             this.veicDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.veicDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.veicDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2,
             this.veicDataGridViewColumnModelo,
             this.Column5,
             this.Column4,
             this.Column1,
-            this.Column2,
             this.veicDataGridViewColumnPlaca,
             this.Column3,
             this.veicDataGridViewColumnEPC});
@@ -730,6 +730,14 @@
             this.panel4.Size = new System.Drawing.Size(753, 467);
             this.panel4.TabIndex = 76;
             // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Motorista";
+            this.Column2.HeaderText = "Motorista";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 160;
+            // 
             // veicDataGridViewColumnModelo
             // 
             this.veicDataGridViewColumnModelo.DataPropertyName = "Modelo";
@@ -743,6 +751,7 @@
             this.Column5.HeaderText = "Patente";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.Width = 60;
             // 
             // Column4
             // 
@@ -750,20 +759,15 @@
             this.Column4.HeaderText = "Cor";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.Width = 50;
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Selo";
-            this.Column1.HeaderText = "# Selo";
+            this.Column1.HeaderText = "Nº Selo";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Motorista";
-            this.Column2.HeaderText = "Motorista";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.Column1.Width = 50;
             // 
             // veicDataGridViewColumnPlaca
             // 
@@ -771,6 +775,7 @@
             this.veicDataGridViewColumnPlaca.HeaderText = "Placa";
             this.veicDataGridViewColumnPlaca.Name = "veicDataGridViewColumnPlaca";
             this.veicDataGridViewColumnPlaca.ReadOnly = true;
+            this.veicDataGridViewColumnPlaca.Width = 70;
             // 
             // Column3
             // 
@@ -778,9 +783,11 @@
             this.Column3.HeaderText = "Setor";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.Width = 70;
             // 
             // veicDataGridViewColumnEPC
             // 
+            this.veicDataGridViewColumnEPC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.veicDataGridViewColumnEPC.DataPropertyName = "EPC";
             this.veicDataGridViewColumnEPC.HeaderText = "EPC";
             this.veicDataGridViewColumnEPC.Name = "veicDataGridViewColumnEPC";
@@ -900,11 +907,11 @@
         private System.Windows.Forms.Label tipoLabel;
         private System.Windows.Forms.Button btn_importar_terc;
         private System.Windows.Forms.Button btn_importar_veic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnModelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnPlaca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn veicDataGridViewColumnEPC;
