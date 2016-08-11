@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Data;
+using System.Linq.Expressions;
 //using Excel = Microsoft.Office.Interop.Excel;
 
 namespace TagGen
@@ -268,7 +269,7 @@ namespace TagGen
         }
 
         //https://social.msdn.microsoft.com/Forums/en-US/1d5c04c7-157f-4955-a14b-41d912d50a64/how-to-fix-error-the-microsoftaceoledb120-provider-is-not-registered-on-the-local-machine?forum=vstsdb
-        private void Importar<T>(Func<Func<int, string>, T> func, int skip = 0) where T : class
+        private void Importar<T>(int skip = 0, params Expression<Func<T, string>>[] properties) where T : class, new()
         {
             var fileDialog = new OpenFileDialog
             {
@@ -303,24 +304,35 @@ namespace TagGen
 
             try
             {
-                var t = ds.Tables[0].Rows.Cast<DataRow>().Skip(skip).Select(row =>
+
+                var setters = properties.Select(p => p != null ? p.ToSetter().Compile() : null);
+
+                int linha = 1;
+
+                var data = ds.Tables[0].Rows.Cast<DataRow>().Skip(skip).Select(row =>
                 {
                     var colunas = row.ItemArray.Select(o => o is string ? (string)o : string.Empty).ToArray();
 
-                    return func(c =>
+                    T t = new T();
+
+                    setters.Do((s, c) =>
                     {
                         try
                         {
-                            return colunas[c];
+                            if (s != null) s(t, colunas[c]);
                         }
                         catch (IndexOutOfRangeException)
                         {
-                            throw new IndexOutOfRangeException("A planilha não contém a " + (c + 1) + "ª coluna.");
+                            throw new IndexOutOfRangeException("Erro na " + linha + "ª linha, " + (c + 1) + "ª coluna (" + ((MemberExpression)properties[c].Body).Member.Name + ").");
                         }
                     });
+
+                    linha++;
+
+                    return t;
                 });
 
-                bd.Set<T>().AddRange(t);
+                bd.Set<T>().AddRange(data);
             }
             catch (IndexOutOfRangeException ex)
             {
@@ -336,29 +348,28 @@ namespace TagGen
 
         private void btn_importar_terc_Click(object sender, EventArgs e)
         {
-            Importar(coluna => new Terceirizado
-            {
-                Empresa = coluna(0),
-                Nome = coluna(1),
-                Identificacao = coluna(2),
-                EPC = coluna(3)
-            }, 1);
+            Importar<Terceirizado>(1,
+                t => t.Empresa,
+                t => t.Nome,
+                t => t.Identificacao,
+                t => t.EPC
+            );
 
             terDataGridView.DataSource = bd.Terceirizados.ToList();
         }
 
         private void btn_importar_veic_Click(object sender, EventArgs e)
         {
-            Importar(coluna => new Veiculo
-            {
-                Selo = coluna(0),
-                Motorista = coluna(1),
-                Patente = coluna(2),
-                Cor = coluna(3),
-                Modelo = coluna(4),
-                Placa = coluna(6),
-                Setor = coluna(7)
-            }, 2);
+            Importar<Veiculo>(2,
+                v => v.Selo,
+                v => v.Motorista,
+                v => v.Patente,
+                v => v.Cor,
+                v => v.Modelo,
+                null,
+                v => v.Placa,
+                v => v.Setor
+            );
 
             veicDataGridView.DataSource = bd.Veiculos.ToList();
         }
