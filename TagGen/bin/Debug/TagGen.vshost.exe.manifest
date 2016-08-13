@@ -175,17 +175,44 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TagGen.exe" size="1678264">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TagGen.exe" size="1687992">
       <assemblyIdentity name="TagGen" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iB3qcsTI5Wl71oBciwB7e3AAFjrgjrjZQgUNcAhcgrk=</dsig:DigestValue>
+        <dsig:DigestValue>z/g8/Kru+5yl11Mm2o/9DiSfRSAHZ0WRWGc506nLZeE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="Banco.Context.tt" size="22929">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Z8aLvyzwqX4o8fz8JVBgDBeYd6JRV/Nr2pDBlJnmVwI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Banco.edmx.sql" size="4333">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>IG1sAy08mbkpVHWhNLgK+mYAgnj4/N728IpAb7nV5ZA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Banco.tt" size="25274">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>pQBuXBs0RcYoDN+DK9zltIut8DroEKdJZ+r1XMP5uoE=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="colégio_cruzeiro_icone.ico" size="1109014">
     <hash>
       <dsig:Transforms>
@@ -213,13 +240,13 @@
       <dsig:DigestValue>fINqVd2/L8U5BP9FytubjwLbmesKSus5iIzDH8vRYrA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TagGen.exe.config" size="1004">
+  <file name="TagGen.exe.config" size="1462">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>x6BoFQSR7bbVlCTI4JzOcqVljhDvsydkuGaZBxYfj4c=</dsig:DigestValue>
+      <dsig:DigestValue>IwMWNtGa5Bx+8tvdi+oMGNvEE6VQo29eaZpW5Ecqpxk=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

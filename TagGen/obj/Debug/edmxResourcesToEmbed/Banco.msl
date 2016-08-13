@@ -19,22 +19,29 @@
       <EntityTypeMapping TypeName="IsTypeOf(Banco.Veiculo)">
         <MappingFragment StoreEntitySet="TagueadoSet_Veiculo">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Placa" ColumnName="Placa" />
           <ScalarProperty Name="Selo" ColumnName="Selo" />
           <ScalarProperty Name="Motorista" ColumnName="Motorista" />
-          <ScalarProperty Name="Cor" ColumnName="Cor" />
           <ScalarProperty Name="Patente" ColumnName="Patente" />
-          <ScalarProperty Name="Setor" ColumnName="Setor" />
+          <ScalarProperty Name="Cor" ColumnName="Cor" />
           <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="Setor" ColumnName="Setor" />
         </MappingFragment>
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(Banco.Visitante)">
         <MappingFragment StoreEntitySet="TagueadoSet_Visitante">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Identificacao" ColumnName="Identificacao" />
           <ScalarProperty Name="Leito" ColumnName="Leito" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tERCEIRIZASet">
+      <EntityTypeMapping TypeName="IsTypeOf(Banco.tERCEIRIZA)">
+        <MappingFragment StoreEntitySet="tERCEIRIZASet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -2,6 +2,7 @@
 <Schema Namespace="Banco.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="BancoStoreContainer">
     <EntitySet Name="TagueadoSet" EntityType="Banco.Store.TagueadoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tERCEIRIZASet" EntityType="Banco.Store.tERCEIRIZASet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TagueadoSet_Terceirizado" EntityType="Banco.Store.TagueadoSet_Terceirizado" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TagueadoSet_Veiculo" EntityType="Banco.Store.TagueadoSet_Veiculo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TagueadoSet_Visitante" EntityType="Banco.Store.TagueadoSet_Visitante" store:Type="Tables" Schema="dbo" />
@@ -22,7 +23,13 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="EPC" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tERCEIRIZASet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="TagueadoSet_Terceirizado">
@@ -38,22 +45,22 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Placa" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Selo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Motorista" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Cor" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Patente" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Setor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cor" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Modelo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Placa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Setor" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="TagueadoSet_Visitante">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Identificacao" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Leito" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
   </EntityType>

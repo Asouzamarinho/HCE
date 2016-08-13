@@ -12,9 +12,8 @@ namespace TagGen
     using System;
     using System.Collections.Generic;
     
-    public partial class Tagueado
+    public partial class tERCEIRIZA
     {
         public int Id { get; set; }
-        public string EPC { get; set; }
     }
 }

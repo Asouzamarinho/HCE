@@ -4,11 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="afa44b0213164a0996dda9ea54e35b3c" Name="Diagram1" ZoomLevel="97" >
-        <EntityTypeShape EntityType="Banco.Tagueado" Width="1.5" PointX="3.75" PointY="1.75" />
-        <EntityTypeShape EntityType="Banco.Terceirizado" Width="1.5" PointX="1.5" PointY="3.875" />
-        <EntityTypeShape EntityType="Banco.Veiculo" Width="1.5" PointX="3.75" PointY="3.875" />
-        <EntityTypeShape EntityType="Banco.Visitante" Width="1.5" PointX="6" PointY="3.875" />
+      <Diagram DiagramId="fa3381a650a147eb8b02133d75a72112" Name="Diagram1" >
+        <EntityTypeShape EntityType="Banco.Tagueado" Width="1.5" PointX="5.25" PointY="1.5" />
+        <EntityTypeShape EntityType="Banco.Terceirizado" Width="1.5" PointX="3" PointY="3.5" />
+        <InheritanceConnector EntityType="Banco.Terceirizado" />
+        <EntityTypeShape EntityType="Banco.Veiculo" Width="1.5" PointX="5.25" PointY="3.5" />
+        <EntityTypeShape EntityType="Banco.Visitante" Width="1.5" PointX="7.5" PointY="3.5" />
+        <InheritanceConnector EntityType="Banco.Visitante" />
+        <InheritanceConnector EntityType="Banco.Veiculo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

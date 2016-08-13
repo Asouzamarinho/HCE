@@ -14,12 +14,12 @@ namespace TagGen
     
     public partial class Veiculo : Tagueado
     {
-        public string Placa { get; set; }
         public string Selo { get; set; }
         public string Motorista { get; set; }
-        public string Cor { get; set; }
         public string Patente { get; set; }
-        public string Setor { get; set; }
+        public string Cor { get; set; }
         public string Modelo { get; set; }
+        public string Placa { get; set; }
+        public string Setor { get; set; }
     }
 }

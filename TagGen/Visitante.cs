@@ -14,9 +14,9 @@ namespace TagGen
     
     public partial class Visitante : Tagueado
     {
-        public string Nome { get; set; }
         public string Identificacao { get; set; }
         public string Leito { get; set; }
+        public string Nome { get; set; }
         public string Tipo { get; set; }
     }
 }

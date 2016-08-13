@@ -11,7 +11,7 @@ namespace TagGen
 {
     public partial class Form1 : Form
     {
-        BD bd;
+        BancoContainer bd;
         Action deletar;
         Action refresh;
         public Form1()
@@ -36,12 +36,12 @@ namespace TagGen
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            bd = new BD();
+            bd = new BancoContainer();
 
         #if DEBUG
-            bd.Database.Delete();
+            //bd.Database.Delete();
         #endif
-
+            bd.Database.CreateIfNotExists();
             terDataGridView.AutoGenerateColumns = false;
             terDataGridView.DataSource = bd.Set<Terceirizado>().ToList();
 
@@ -67,7 +67,7 @@ namespace TagGen
         {
             if (!Procurar())
             {
-                var index = ((DataGridViewRow)terDataGridView.SelectedRows[0]).Index;
+                var index = terDataGridView.SelectedRows[0].Index;
                 ((List<Terceirizado>)terDataGridView.DataSource)[index].EPC = textBoxEPC.Text;
 
                 bd.SaveChanges();
@@ -92,7 +92,7 @@ namespace TagGen
         {
             if (terDataGridView.SelectedRows.Count > 0)
             {
-                var index = ((DataGridViewRow)terDataGridView.SelectedRows[0]).Index;
+                var index = terDataGridView.SelectedRows[0].Index;
                 textBoxPessoafunc.Text = ((List<Terceirizado>)terDataGridView.DataSource)[index].Nome;
             }
         }
@@ -116,7 +116,7 @@ namespace TagGen
         {
             if (!Procurar())
             {
-                var index = ((DataGridViewRow)visDataGridView.SelectedRows[0]).Index;
+                var index = visDataGridView.SelectedRows[0].Index;
                 ((List<Visitante>)visDataGridView.DataSource)[index].EPC = textBoxEPC.Text;
 
                 bd.SaveChanges();
