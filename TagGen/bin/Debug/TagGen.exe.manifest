@@ -175,14 +175,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TagGen.exe" size="1687992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TagGen.exe" size="1685944">
       <assemblyIdentity name="TagGen" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>z/g8/Kru+5yl11Mm2o/9DiSfRSAHZ0WRWGc506nLZeE=</dsig:DigestValue>
+        <dsig:DigestValue>psV/tdnra7AoILttVe1FcSBvDAyJbqlbJ2Xa68KRJoE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

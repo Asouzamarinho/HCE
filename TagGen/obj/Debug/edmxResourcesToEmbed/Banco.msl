@@ -38,12 +38,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tERCEIRIZASet">
-      <EntityTypeMapping TypeName="IsTypeOf(Banco.tERCEIRIZA)">
-        <MappingFragment StoreEntitySet="tERCEIRIZASet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

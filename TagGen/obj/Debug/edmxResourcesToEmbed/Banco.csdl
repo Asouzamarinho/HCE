@@ -2,7 +2,6 @@
 <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Banco" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
   <EntityContainer Name="BancoContainer" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="TagueadoSet" EntityType="Banco.Tagueado" />
-    <EntitySet Name="tERCEIRIZASet" EntityType="Banco.tERCEIRIZA" />
   </EntityContainer>
   <EntityType Name="Tagueado">
     <Key>
@@ -10,12 +9,6 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="EPC" Type="String" Nullable="true" />
-  </EntityType>
-  <EntityType Name="tERCEIRIZA">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="Terceirizado" BaseType="Banco.Tagueado">
     <Property Name="Nome" Type="String" Nullable="false" />

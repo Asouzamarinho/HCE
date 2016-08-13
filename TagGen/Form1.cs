@@ -65,7 +65,7 @@ namespace TagGen
 
         private void btn_associar_funcionarios_Click(object sender, EventArgs e)
         {
-            if (!Procurar())
+            if (TentaEncontrarEPC() == null)
             {
                 var index = terDataGridView.SelectedRows[0].Index;
                 ((List<Terceirizado>)terDataGridView.DataSource)[index].EPC = textBoxEPC.Text;
@@ -114,7 +114,7 @@ namespace TagGen
 
         private void btn_associar_visitantes_Click(object sender, EventArgs e)
         {
-            if (!Procurar())
+            if (TentaEncontrarEPC() == null)
             {
                 var index = visDataGridView.SelectedRows[0].Index;
                 ((List<Visitante>)visDataGridView.DataSource)[index].EPC = textBoxEPC.Text;
@@ -172,9 +172,9 @@ namespace TagGen
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!Procurar())
+            if (TentaEncontrarEPC() == null)
             {
-                var index = ((DataGridViewRow)veicDataGridView.SelectedRows[0]).Index;
+                var index = veicDataGridView.SelectedRows[0].Index;
                 ((List<Veiculo>)veicDataGridView.DataSource)[index].EPC = textBoxEPC.Text;
 
                 bd.SaveChanges();
@@ -187,7 +187,7 @@ namespace TagGen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var index = ((DataGridViewRow)veicDataGridView.SelectedRows[0]).Index;
+            var index = veicDataGridView.SelectedRows[0].Index;
             ((List<Veiculo>)veicDataGridView.DataSource)[index].EPC = "";
 
             bd.SaveChanges();
@@ -195,61 +195,46 @@ namespace TagGen
             veicDataGridView.DataSource = bd.Set<Veiculo>().ToList();
         }
 
-        bool Procurar()
+        Tagueado TentaEncontrarEPC()
         {
-            if (textBoxEPC.Text != "")
+            try
             {
-                string dados;
-
-                try
-                {
-                    var v = bd.Set<Terceirizado>().Single(t => t.EPC == textBoxEPC.Text);
-                    dados = v.Nome;
-                    deletar = () => bd.Set<Terceirizado>().Remove(v);
-                    refresh = () => terDataGridView.DataSource = bd.Set<Terceirizado>().ToList();
-
-                    tipoLabel.Text = "Terceirizado";
-                }
-                catch
-                {
-                    try
-                    {
-                        var v = bd.Set<Visitante>().Single(t => t.EPC == textBoxEPC.Text);
-                        dados = v.Nome;
-                        deletar = () => bd.Set<Visitante>().Remove(v);
-                        refresh = () => visDataGridView.DataSource = bd.Set<Visitante>().ToList();
-
-                        tipoLabel.Text = "Visitantes";
-                    }
-                    catch
-                    {
-                        try
-                        {
-                            var v = bd.Set<Veiculo>().Single(t => t.EPC == textBoxEPC.Text);
-                            dados = v.Placa;
-                            deletar = () => bd.Set<Veiculo>().Remove(v);
-                            refresh = () => veicDataGridView.DataSource = bd.Set<Veiculo>().ToList();
-
-                            tipoLabel.Text = "Veículos";
-                        }
-                        catch
-                        {
-                            dados = "Não encontrado";
-                            deletar = null;
-                            refresh = null;
-
-                            tipoLabel.Text = "";
-
-                            return false;
-                        }
-                    }
-                }
-
-                dadosLabel.Text = dados;
-
-                return true;
+                return textBoxEPC.Text != "" ? bd.Set<Tagueado>().Single(t => t.EPC == textBoxEPC.Text) : null;
             }
-            else return false;
+            catch
+            {
+                return null;
+            }
+        }
+
+        void Procurar()
+        {
+            var tagueado = TentaEncontrarEPC();
+            string dados = "";
+
+            if (tagueado != null)
+            {
+                deletar = () => tagueado.EPC = "";
+                tipoLabel.Text = tagueado.GetType().Name;
+
+                if (tagueado is Terceirizado)
+                {
+                    refresh = () => terDataGridView.DataSource = bd.Set<Terceirizado>().ToList();
+                    dados = ((Terceirizado)tagueado).Nome;
+                }
+                else if (tagueado is Veiculo)
+                {
+                    refresh = () => veicDataGridView.DataSource = bd.Set<Veiculo>().ToList();
+                    dados = ((Veiculo)tagueado).Placa;
+                }
+                else if (tagueado is Visitante)
+                {
+                    refresh = () => visDataGridView.DataSource = bd.Set<Visitante>().ToList();
+                    dados = ((Visitante)tagueado).Nome;
+                }
+            }
+
+            dadosLabel.Text = dados;
         }
 
         private void btn_procurar_Click(object sender, EventArgs e)

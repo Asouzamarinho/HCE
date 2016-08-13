@@ -151,9 +151,6 @@
     <Compile Include="Tagueado.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
-    <Compile Include="tERCEIRIZA.cs">
-      <DependentUpon>Banco.tt</DependentUpon>
-    </Compile>
     <Compile Include="Terceirizado.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>

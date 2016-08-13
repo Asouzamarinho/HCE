@@ -26,6 +26,5 @@ namespace TagGen
         }
     
         public virtual DbSet<Tagueado> TagueadoSet { get; set; }
-        public virtual DbSet<tERCEIRIZA> tERCEIRIZASet { get; set; }
     }
 }

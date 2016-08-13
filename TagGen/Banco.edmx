@@ -7,7 +7,6 @@
     <Schema Namespace="Banco.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="BancoStoreContainer">
     <EntitySet Name="TagueadoSet" EntityType="Banco.Store.TagueadoSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tERCEIRIZASet" EntityType="Banco.Store.tERCEIRIZASet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TagueadoSet_Terceirizado" EntityType="Banco.Store.TagueadoSet_Terceirizado" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TagueadoSet_Veiculo" EntityType="Banco.Store.TagueadoSet_Veiculo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TagueadoSet_Visitante" EntityType="Banco.Store.TagueadoSet_Visitante" store:Type="Tables" Schema="dbo" />
@@ -30,12 +29,6 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="EPC" Type="nvarchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="tERCEIRIZASet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="TagueadoSet_Terceirizado">
     <Key>
@@ -117,7 +110,6 @@
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Banco" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="BancoContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TagueadoSet" EntityType="Banco.Tagueado" />
-          <EntitySet Name="tERCEIRIZASet" EntityType="Banco.tERCEIRIZA" />
         </EntityContainer>
         <EntityType Name="Tagueado">
           <Key>
@@ -125,12 +117,6 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EPC" Type="String" Nullable="true" />
-        </EntityType>
-        <EntityType Name="tERCEIRIZA">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="Terceirizado" BaseType="Banco.Tagueado">
           <Property Name="Nome" Type="String" Nullable="false" />
@@ -192,13 +178,6 @@
           <ScalarProperty Name="Leito" ColumnName="Leito" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tERCEIRIZASet">
-      <EntityTypeMapping TypeName="IsTypeOf(Banco.tERCEIRIZA)">
-        <MappingFragment StoreEntitySet="tERCEIRIZASet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
