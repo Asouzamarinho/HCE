@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="TaggedSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Tagged)">
+        <MappingFragment StoreEntitySet="TaggedSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EPC" ColumnName="EPC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Terceirizado)">
+        <MappingFragment StoreEntitySet="TaggedSet_Terceirizado">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Identificacao" ColumnName="Identificacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Veiculo)">
+        <MappingFragment StoreEntitySet="TaggedSet_Veiculo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="Selo" ColumnName="Selo" />
+          <ScalarProperty Name="Motorista" ColumnName="Motorista" />
+          <ScalarProperty Name="Cor" ColumnName="Cor" />
+          <ScalarProperty Name="Patente" ColumnName="Patente" />
+          <ScalarProperty Name="Setor" ColumnName="Setor" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Visitante)">
+        <MappingFragment StoreEntitySet="TaggedSet_Visitante">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Identificacao" ColumnName="Identificacao" />
+          <ScalarProperty Name="Leito" ColumnName="Leito" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

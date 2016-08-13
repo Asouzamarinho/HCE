@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="TaggedSet" EntityType="Model1.Store.TaggedSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TaggedSet_Terceirizado" EntityType="Model1.Store.TaggedSet_Terceirizado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TaggedSet_Veiculo" EntityType="Model1.Store.TaggedSet_Veiculo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TaggedSet_Visitante" EntityType="Model1.Store.TaggedSet_Visitante" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Terceirizado_inherits_Tagged" Association="Model1.Store.FK_Terceirizado_inherits_Tagged">
+      <End Role="Tagged" EntitySet="TaggedSet" />
+      <End Role="Terceirizado" EntitySet="TaggedSet_Terceirizado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Veiculo_inherits_Tagged" Association="Model1.Store.FK_Veiculo_inherits_Tagged">
+      <End Role="Tagged" EntitySet="TaggedSet" />
+      <End Role="Veiculo" EntitySet="TaggedSet_Veiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitante_inherits_Tagged" Association="Model1.Store.FK_Visitante_inherits_Tagged">
+      <End Role="Tagged" EntitySet="TaggedSet" />
+      <End Role="Visitante" EntitySet="TaggedSet_Visitante" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TaggedSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="EPC" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaggedSet_Terceirizado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Empresa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Identificacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaggedSet_Veiculo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Placa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Selo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Motorista" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patente" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Setor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Modelo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaggedSet_Visitante">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Identificacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Leito" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Terceirizado_inherits_Tagged">
+    <End Role="Tagged" Type="Model1.Store.TaggedSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Terceirizado" Type="Model1.Store.TaggedSet_Terceirizado" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tagged">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Terceirizado">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Veiculo_inherits_Tagged">
+    <End Role="Tagged" Type="Model1.Store.TaggedSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Veiculo" Type="Model1.Store.TaggedSet_Veiculo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tagged">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Veiculo">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitante_inherits_Tagged">
+    <End Role="Tagged" Type="Model1.Store.TaggedSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Visitante" Type="Model1.Store.TaggedSet_Visitante" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tagged">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visitante">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

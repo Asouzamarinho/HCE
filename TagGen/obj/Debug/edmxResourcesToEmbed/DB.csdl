@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Modelo" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="DB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TagueadoSet" EntityType="Modelo.Tagueado" />
+  </EntityContainer>
+  <EntityType Name="Tagueado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="EPC" Type="String" Nullable="true" annotation:StoreGeneratedPattern="None" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Terceirizado" BaseType="Modelo.Tagueado">
+    <Property Name="Nome" Type="String" Nullable="false" />
+    <Property Name="Empresa" Type="String" Nullable="false" />
+    <Property Name="Identificacao" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Veiculo" BaseType="Modelo.Tagueado">
+    <Property Name="Placa" Type="String" Nullable="false" />
+    <Property Name="Selo" Type="String" Nullable="false" />
+    <Property Name="Motorista" Type="String" Nullable="false" />
+    <Property Name="Cor" Type="String" Nullable="false" />
+    <Property Name="Patente" Type="String" Nullable="false" />
+    <Property Name="Setor" Type="String" Nullable="false" />
+    <Property Name="Modelo" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Visitante" BaseType="Modelo.Tagueado">
+    <Property Name="Nome" Type="String" Nullable="false" />
+    <Property Name="Identificacao" Type="String" Nullable="false" />
+    <Property Name="Leito" Type="String" Nullable="false" />
+    <Property Name="Tipo" Type="String" Nullable="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Banco.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BancoStoreContainer">
+    <EntitySet Name="TagueadoSet" EntityType="Banco.Store.TagueadoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TagueadoSet_Terceirizado" EntityType="Banco.Store.TagueadoSet_Terceirizado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TagueadoSet_Veiculo" EntityType="Banco.Store.TagueadoSet_Veiculo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TagueadoSet_Visitante" EntityType="Banco.Store.TagueadoSet_Visitante" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Terceirizado_inherits_Tagueado" Association="Banco.Store.FK_Terceirizado_inherits_Tagueado">
+      <End Role="Tagueado" EntitySet="TagueadoSet" />
+      <End Role="Terceirizado" EntitySet="TagueadoSet_Terceirizado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Veiculo_inherits_Tagueado" Association="Banco.Store.FK_Veiculo_inherits_Tagueado">
+      <End Role="Tagueado" EntitySet="TagueadoSet" />
+      <End Role="Veiculo" EntitySet="TagueadoSet_Veiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitante_inherits_Tagueado" Association="Banco.Store.FK_Visitante_inherits_Tagueado">
+      <End Role="Tagueado" EntitySet="TagueadoSet" />
+      <End Role="Visitante" EntitySet="TagueadoSet_Visitante" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TagueadoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="EPC" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TagueadoSet_Terceirizado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Empresa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Identificacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TagueadoSet_Veiculo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Placa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Selo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Motorista" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patente" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Setor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Modelo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TagueadoSet_Visitante">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Identificacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Leito" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Terceirizado_inherits_Tagueado">
+    <End Role="Tagueado" Type="Banco.Store.TagueadoSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Terceirizado" Type="Banco.Store.TagueadoSet_Terceirizado" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tagueado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Terceirizado">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Veiculo_inherits_Tagueado">
+    <End Role="Tagueado" Type="Banco.Store.TagueadoSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Veiculo" Type="Banco.Store.TagueadoSet_Veiculo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tagueado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Veiculo">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitante_inherits_Tagueado">
+    <End Role="Tagueado" Type="Banco.Store.TagueadoSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Visitante" Type="Banco.Store.TagueadoSet_Visitante" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tagueado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visitante">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Banco" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="BancoContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TagueadoSet" EntityType="Banco.Tagueado" />
+        </EntityContainer>
+        <EntityType Name="Tagueado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="EPC" Type="String" Nullable="true" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Terceirizado" BaseType="Banco.Tagueado">
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Empresa" Type="String" Nullable="false" />
+          <Property Name="Identificacao" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Veiculo" BaseType="Banco.Tagueado">
+          <Property Name="Placa" Type="String" Nullable="false" />
+          <Property Name="Selo" Type="String" Nullable="false" />
+          <Property Name="Motorista" Type="String" Nullable="false" />
+          <Property Name="Cor" Type="String" Nullable="false" />
+          <Property Name="Patente" Type="String" Nullable="false" />
+          <Property Name="Setor" Type="String" Nullable="false" />
+          <Property Name="Modelo" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Visitante" BaseType="Banco.Tagueado">
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Identificacao" Type="String" Nullable="false" />
+          <Property Name="Leito" Type="String" Nullable="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BancoStoreContainer" CdmEntityContainer="BancoContainer">
+    <EntitySetMapping Name="TagueadoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Banco.Tagueado)">
+        <MappingFragment StoreEntitySet="TagueadoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EPC" ColumnName="EPC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Banco.Terceirizado)">
+        <MappingFragment StoreEntitySet="TagueadoSet_Terceirizado">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Identificacao" ColumnName="Identificacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Banco.Veiculo)">
+        <MappingFragment StoreEntitySet="TagueadoSet_Veiculo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="Selo" ColumnName="Selo" />
+          <ScalarProperty Name="Motorista" ColumnName="Motorista" />
+          <ScalarProperty Name="Cor" ColumnName="Cor" />
+          <ScalarProperty Name="Patente" ColumnName="Patente" />
+          <ScalarProperty Name="Setor" ColumnName="Setor" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Banco.Visitante)">
+        <MappingFragment StoreEntitySet="TagueadoSet_Visitante">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Identificacao" ColumnName="Identificacao" />
+          <ScalarProperty Name="Leito" ColumnName="Leito" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

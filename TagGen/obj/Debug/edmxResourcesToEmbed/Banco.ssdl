@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Banco.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BancoStoreContainer">
+    <EntitySet Name="TagueadoSet" EntityType="Banco.Store.TagueadoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TagueadoSet_Terceirizado" EntityType="Banco.Store.TagueadoSet_Terceirizado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TagueadoSet_Veiculo" EntityType="Banco.Store.TagueadoSet_Veiculo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TagueadoSet_Visitante" EntityType="Banco.Store.TagueadoSet_Visitante" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Terceirizado_inherits_Tagueado" Association="Banco.Store.FK_Terceirizado_inherits_Tagueado">
+      <End Role="Tagueado" EntitySet="TagueadoSet" />
+      <End Role="Terceirizado" EntitySet="TagueadoSet_Terceirizado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Veiculo_inherits_Tagueado" Association="Banco.Store.FK_Veiculo_inherits_Tagueado">
+      <End Role="Tagueado" EntitySet="TagueadoSet" />
+      <End Role="Veiculo" EntitySet="TagueadoSet_Veiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitante_inherits_Tagueado" Association="Banco.Store.FK_Visitante_inherits_Tagueado">
+      <End Role="Tagueado" EntitySet="TagueadoSet" />
+      <End Role="Visitante" EntitySet="TagueadoSet_Visitante" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TagueadoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="EPC" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TagueadoSet_Terceirizado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Empresa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Identificacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TagueadoSet_Veiculo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Placa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Selo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Motorista" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patente" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Setor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Modelo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TagueadoSet_Visitante">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Identificacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Leito" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Terceirizado_inherits_Tagueado">
+    <End Role="Tagueado" Type="Banco.Store.TagueadoSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Terceirizado" Type="Banco.Store.TagueadoSet_Terceirizado" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tagueado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Terceirizado">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Veiculo_inherits_Tagueado">
+    <End Role="Tagueado" Type="Banco.Store.TagueadoSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Veiculo" Type="Banco.Store.TagueadoSet_Veiculo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tagueado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Veiculo">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitante_inherits_Tagueado">
+    <End Role="Tagueado" Type="Banco.Store.TagueadoSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Visitante" Type="Banco.Store.TagueadoSet_Visitante" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tagueado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visitante">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

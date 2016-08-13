@@ -43,13 +43,13 @@ namespace TagGen
         #endif
 
             terDataGridView.AutoGenerateColumns = false;
-            terDataGridView.DataSource = bd.Terceirizados.ToList();
+            terDataGridView.DataSource = bd.Set<Terceirizado>().ToList();
 
             visDataGridView.AutoGenerateColumns = false;
-            visDataGridView.DataSource = bd.Visitantes.ToList();
+            visDataGridView.DataSource = bd.Set<Visitante>().ToList();
 
             veicDataGridView.AutoGenerateColumns = false;
-            veicDataGridView.DataSource = bd.Veiculos.ToList();
+            veicDataGridView.DataSource = bd.Set<Veiculo>().ToList();
          }
 
         private void btn_conectar_leitor_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace TagGen
 
                 bd.SaveChanges();
 
-                terDataGridView.DataSource = bd.Terceirizados.ToList();
+                terDataGridView.DataSource = bd.Set<Terceirizado>().ToList();
 
                 dadosLabel.Text = "cadastrado";
             }
@@ -80,12 +80,12 @@ namespace TagGen
 
         private void btn_apagar_funcionarios_Click(object sender, EventArgs e)
         {
-            var index = ((DataGridViewRow)terDataGridView.SelectedRows[0]).Index;
+            var index = terDataGridView.SelectedRows[0].Index;
             ((List<Terceirizado>)terDataGridView.DataSource)[index].EPC = "";
 
             bd.SaveChanges();
 
-            terDataGridView.DataSource = bd.Terceirizados.ToList();
+            terDataGridView.DataSource = bd.Set<Terceirizado>().ToList();
         }
 
         private void terDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -99,7 +99,7 @@ namespace TagGen
 
         private void btn_criar_visitantes_Click(object sender, EventArgs e)
         {
-            bd.Visitantes.Add(new Visitante
+            bd.Set<Visitante>().Add(new Visitante
             {
                 Identificacao = visIdentTextBox.Text,
                 Leito = visLeitoTextBox.Text,
@@ -109,7 +109,7 @@ namespace TagGen
 
             bd.SaveChanges();
 
-            visDataGridView.DataSource = bd.Visitantes.ToList();
+            visDataGridView.DataSource = bd.Set<Visitante>().ToList();
         }
 
         private void btn_associar_visitantes_Click(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace TagGen
 
                 bd.SaveChanges();
 
-                visDataGridView.DataSource = bd.Visitantes.ToList();
+                visDataGridView.DataSource = bd.Set<Visitante>().ToList();
 
                 dadosLabel.Text = "cadastrado";
             }
@@ -129,19 +129,19 @@ namespace TagGen
 
         private void btn_apagar_visitantes_Click(object sender, EventArgs e)
         {
-            var index = ((DataGridViewRow)visDataGridView.SelectedRows[0]).Index;
+            var index = visDataGridView.SelectedRows[0].Index;
             ((List<Visitante>)visDataGridView.DataSource)[index].EPC = "";
 
             bd.SaveChanges();
 
-            visDataGridView.DataSource = bd.Visitantes.ToList();
+            visDataGridView.DataSource = bd.Set<Visitante>().ToList();
         }
 
         private void visDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             if (visDataGridView.SelectedRows.Count > 0)
             {
-                var index = ((DataGridViewRow)visDataGridView.SelectedRows[0]).Index;
+                var index = visDataGridView.SelectedRows[0].Index;
                 textBoxpessoavisit.Text = ((List<Visitante>)visDataGridView.DataSource)[index].Nome;
             }
         }
@@ -150,14 +150,14 @@ namespace TagGen
         {
             if (visDataGridView.SelectedRows.Count > 0)
             {
-                var index = ((DataGridViewRow)visDataGridView.SelectedRows[0]).Index;
+                var index = visDataGridView.SelectedRows[0].Index;
                 var vis = ((List<Visitante>)visDataGridView.DataSource)[index];
 
-                bd.Visitantes.Remove(vis);
+                bd.Set<Visitante>().Remove(vis);
 
                 bd.SaveChanges();
 
-                visDataGridView.DataSource = bd.Visitantes.ToList();
+                visDataGridView.DataSource = bd.Set<Visitante>().ToList();
             }
         }
 
@@ -165,7 +165,7 @@ namespace TagGen
         {
             if (veicDataGridView.SelectedRows.Count > 0)
             {
-                var index = ((DataGridViewRow)veicDataGridView.SelectedRows[0]).Index;
+                var index = veicDataGridView.SelectedRows[0].Index;
                 textBox1.Text = ((List<Veiculo>)veicDataGridView.DataSource)[index].Placa;
             }
         }
@@ -179,7 +179,7 @@ namespace TagGen
 
                 bd.SaveChanges();
 
-                veicDataGridView.DataSource = bd.Veiculos.ToList();
+                veicDataGridView.DataSource = bd.Set<Veiculo>().ToList();
 
                 dadosLabel.Text = "cadastrado";
             }
@@ -192,7 +192,7 @@ namespace TagGen
 
             bd.SaveChanges();
 
-            veicDataGridView.DataSource = bd.Veiculos.ToList();
+            veicDataGridView.DataSource = bd.Set<Veiculo>().ToList();
         }
 
         bool Procurar()
@@ -203,10 +203,10 @@ namespace TagGen
 
                 try
                 {
-                    var v = bd.Terceirizados.Single(t => t.EPC == textBoxEPC.Text);
+                    var v = bd.Set<Terceirizado>().Single(t => t.EPC == textBoxEPC.Text);
                     dados = v.Nome;
-                    deletar = () => bd.Terceirizados.Remove(v);
-                    refresh = () => terDataGridView.DataSource = bd.Terceirizados.ToList();
+                    deletar = () => bd.Set<Terceirizado>().Remove(v);
+                    refresh = () => terDataGridView.DataSource = bd.Set<Terceirizado>().ToList();
 
                     tipoLabel.Text = "Terceirizado";
                 }
@@ -214,10 +214,10 @@ namespace TagGen
                 {
                     try
                     {
-                        var v = bd.Visitantes.Single(t => t.EPC == textBoxEPC.Text);
+                        var v = bd.Set<Visitante>().Single(t => t.EPC == textBoxEPC.Text);
                         dados = v.Nome;
-                        deletar = () => bd.Visitantes.Remove(v);
-                        refresh = () => visDataGridView.DataSource = bd.Visitantes.ToList();
+                        deletar = () => bd.Set<Visitante>().Remove(v);
+                        refresh = () => visDataGridView.DataSource = bd.Set<Visitante>().ToList();
 
                         tipoLabel.Text = "Visitantes";
                     }
@@ -225,10 +225,10 @@ namespace TagGen
                     {
                         try
                         {
-                            var v = bd.Veiculos.Single(t => t.EPC == textBoxEPC.Text);
+                            var v = bd.Set<Veiculo>().Single(t => t.EPC == textBoxEPC.Text);
                             dados = v.Placa;
-                            deletar = () => bd.Veiculos.Remove(v);
-                            refresh = () => veicDataGridView.DataSource = bd.Veiculos.ToList();
+                            deletar = () => bd.Set<Veiculo>().Remove(v);
+                            refresh = () => veicDataGridView.DataSource = bd.Set<Veiculo>().ToList();
 
                             tipoLabel.Text = "Veículos";
                         }
@@ -357,7 +357,7 @@ namespace TagGen
                 t => t.EPC
             );
 
-            terDataGridView.DataSource = bd.Terceirizados.ToList();
+            terDataGridView.DataSource = bd.Set<Terceirizado>().ToList();
         }
 
         private void btn_importar_veic_Click(object sender, EventArgs e)
@@ -373,7 +373,7 @@ namespace TagGen
                 v => v.Setor
             );
 
-            veicDataGridView.DataSource = bd.Veiculos.ToList();
+            veicDataGridView.DataSource = bd.Set<Veiculo>().ToList();
         }
     }
 }
