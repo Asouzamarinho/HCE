@@ -345,7 +345,6 @@ namespace TagGen
             Importar<Terceirizado>(1,
                 t => t.Empresa,
                 t => t.Nome,
-                t => t.Identificacao,
                 t => t.Identificacao
             );
 

@@ -64,4 +64,3 @@ C:\Users\Marcos\Source\Repos\HCE\TagGen\bin\Release\ServiceStack.Text.xml
 C:\Users\Marcos\Source\Repos\HCE\TagGen\obj\Release\TagGen.exe.manifest
 C:\Users\Marcos\Source\Repos\HCE\TagGen\obj\Release\TagGen.application
 C:\Users\Marcos\Source\Repos\HCE\TagGen\obj\Release\TagGen.pdb
-C:\Users\Marcos\Source\Repos\HCE\TagGen\obj\Release\TagGen.csprojResolveAssemblyReference.cache
