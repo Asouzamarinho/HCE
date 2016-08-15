@@ -16,7 +16,7 @@ namespace TagGen
     public partial class BancoContainer : DbContext
     {
         public BancoContainer()
-            : base("name=BancoContainer")
+            : base()
         {
         }
     

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Data;
 using System.Linq.Expressions;
+using IRI.Win32.CSharp.IRIWrapper;
 //using Excel = Microsoft.Office.Interop.Excel;
 
 namespace TagGen
@@ -39,7 +40,7 @@ namespace TagGen
             bd = new BancoContainer();
 
         #if DEBUG
-            //bd.Database.Delete();
+            bd.Database.Delete();
         #endif
             bd.Database.CreateIfNotExists();
             terDataGridView.AutoGenerateColumns = false;
@@ -197,9 +198,14 @@ namespace TagGen
 
         Tagueado TentaEncontrarEPC()
         {
+            return textBoxEPC.Text != "" ? TentaEncontrarEPC(textBoxEPC.Text) : null;
+        }
+
+        Tagueado TentaEncontrarEPC(string epc)
+        {
             try
             {
-                return textBoxEPC.Text != "" ? bd.Set<Tagueado>().Single(t => t.EPC == textBoxEPC.Text) : null;
+                return bd.Set<Tagueado>().Single(t => t.EPC == epc);
             }
             catch
             {
@@ -209,8 +215,9 @@ namespace TagGen
 
         void Procurar()
         {
-            var tagueado = TentaEncontrarEPC();
+            Tagueado tagueado = TentaEncontrarEPC();
             string dados = "";
+            deletar = null;
 
             if (tagueado != null)
             {
@@ -339,7 +346,7 @@ namespace TagGen
                 t => t.Empresa,
                 t => t.Nome,
                 t => t.Identificacao,
-                t => t.EPC
+                t => t.Identificacao
             );
 
             terDataGridView.DataSource = bd.Set<Terceirizado>().ToList();
